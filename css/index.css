@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    color: #444;
+}
+header,#outer,main,footer{
+    width: 1000px;
+    margin: 0 auto;
+}
+header{
+    height: 160px;
+    background-image: linear-gradient(to bottom, #f9f9f9,#f9f9f9,#f6f6f6);
+    position: relative;
+    border-bottom: 1px solid #e6e6e6;
+}
+#logo{
+    float: left;
+    margin: 0px 30px;
+    height: 80px;
+}
+#logo>span{
+    font-size: 35px;
+    font-family: '华文行楷';
+    position: relative;
+    top: -40px;
+    right: 25px;
+}
+#my{
+    float: right;
+    width: 640px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+nav>div{
+    display: inline-block;
+    text-align: center;
+}
+nav>div>span{
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    line-height: 28px;
+    font-size: 18px;
+    background-image: linear-gradient(to bottom, #e9e9e9,#d9d9d9);
+}
+.checked, nav>div:last-child>span{
+    background-image: linear-gradient(to bottom,#ffc633,#fabf1d,#ffb400);
+    color: white;
+}
+nav>div:first-child{
+    padding-top: 30px;
+}
+nav>div:first-child>span{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+nav>div:last-child{
+    margin-top: 10px;
+    margin-right: 20px;
+    float: right;
+}
+nav>div>input{
+    width: 300px;
+    height: 30px;
+    padding: 0 8px;
+    margin-right: -5px;
+}
+#title{
+    color: white;
+    height: 30px;
+    padding: 4px;
+    text-align: center;
+    margin-top: -1px;
+    clear: both;
+    background-image: linear-gradient(to bottom,#ffb400,#fc9400,#fa7202);
+}
+#title>span{
+    display: inline-block;
+    padding: 0 10px;
+    border-right: 1px solid #e8e8e8;
+}
+#title>span:last-child{
+    border-right: none;
+}
+#outer{
+    height: 300px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+#inner{
+    height: 300px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+#inner>img{
+    margin: -2px 0;
+}
+#outer>ul{
+    height: 300px;
+    overflow: hidden;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#outer li{
+    width: 220px;
+    height: 60px;
+    line-height: 25px;
+    list-style: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+}
+#outer li.current{
+    background: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: orange;
+}
