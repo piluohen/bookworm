@@ -1,0 +1,16 @@
+{
+  "name": "shudaizi",
+  "version": "1.0.0",
+  "description": "书呆子",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "author": "皮帅帅",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.3"
+  }
+}

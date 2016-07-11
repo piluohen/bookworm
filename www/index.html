@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="皮帅帅">
+        <link rel="shortcut icon" href="favicon.png" type="image/png">
+        <link rel="icon" href="favicon.png" type="image/png">
+        <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="css/index.css">
+        <title>书呆子-首页</title>
+        <script src="libs/angular.js"></script>
+        <script src="libs/jquery.min.js"></script>
+        <script src="scripts/index.js"></script>
+        <script src="scripts/carouse1.js"></script>
+    </head>
+    <body ng-app="MainPage" ng-controller="MainCtrl">
+        <header>
+            <section id="logo">
+                <img src="image/logo.png" alt="书呆子logo"><span>书呆子</span>
+            </section>
+            <section id="my">
+                <span>花径不曾缘客扫，蓬门今始为君开&#x3000;</span>
+                <span>请登录</span>
+                <span>免费注册</span>
+                <span>购物车</span>
+                <span>书架</span>
+                <span>订单</span>
+                <span>帮助</span>
+            </section>
+            <nav>
+                <div>
+                    <span class="checked">首页</span>
+                    <span>特卖</span>
+                    <span>淘宝团</span>
+                </div>
+                <div>
+                    <input type="text" placeholder="平凡的世界" autofocus>
+                    <span>搜索</span>
+                </div>
+            </nav>
+            <section id="title">
+                <span>畅销书</span>
+                <span>文学</span>
+                <span>社科</span>
+                <span>少儿</span>
+                <span>生活</span>
+                <span>艺术</span>
+                <span>文教</span>
+                <span>分类浏览</span>
+                <span>出版社浏览</span>
+                <span>闲情雅趣</span>
+                <span>诗书会</span>
+            </section>
+        </header>
+
+        <!--向上轮播图-->
+        <div id="outer">
+            <div id="inner">
+                <img src="image/carouse/carouse-1.jpg" alt="暑期书单满99减50，精选图书限时直降">
+                <img src="image/carouse/carouse-2.jpg" alt="“《李樯作品集》4册”">
+                <img src="image/carouse/carouse-3.jpg" alt="“《精神家园丛书》全4册”">
+                <img src="image/carouse/carouse-4.jpg" alt="“《堂吉诃德》上下卷”">
+                <img src="image/carouse/carouse-5.jpg" alt="奇葩养成课——好口才进阶书单">
+            </div>
+            <ul>
+                <li class="current">暑期书单满99减50，精选图书限时直降</li>
+                <li>金马奖编剧《李樯作品集》4册，还原了电影中的所有删节部分</li>
+                <li>《精神家园丛书》全4册，对构筑精神家园进行思想探索</li>
+                <li>《堂吉诃德》上下卷，配有达利的三十八幅精美插图</li>
+                <li>奇葩养成课——好口才进阶书单</li>
+            </ul>
+        </div>
+
+        <main>
+            <div id="main-top">
+                <!--主页上部左侧栏目-->
+                <div id="left">
+                    <aside>
+                        <div id="div-title">新到特价书精选<span>更多>></span></div>
+                        <ul>
+                            <li ng-repeat="x in data.book1">· {{x.content}}</li>
+                        </ul>
+                    </aside>
+                    <aside>
+                        <div id="div-title">公告</div>
+                        <ul>
+                            <li style="color:red">· 南方洪涝地区，订单配送延迟</li>
+                            <li ng-repeat="x in data.news">· {{x.content}}</li>
+                            <li>·关注我们的官方微博：<img src="image/sina.ico" /></li>
+                        </ul>
+                    </aside>
+                    <aside>
+                        <div id="div-title">书讯</div>
+                        <ul>
+                            <li class="borderline" ng-repeat="x in data.press1"><span class="icon-angle-right"> </span>{{x.content}}</li>
+                            <li ng-repeat="x in data.press">· {{x.content}}</li>
+                        </ul>
+                    </aside>
+                </div>
+
+                <div id="middle">
+                    <!--中间向左轮播图-->
+                    <div id="middle-carouse">
+                        <ul id="carouse">
+                            <li>
+                                <img ng-repeat="x in data.img1" src="{{x.img}}">
+                            </li>
+                            <li>
+                                <img ng-repeat="x in data.img2" src="{{x.img}}">
+                            </li>
+                            <li>
+                                <img ng-repeat="x in data.img3" src="{{x.img}}">
+                            </li>
+                        </ul>
+                        <span id="carouse-prev" class="icon-angle-left icon-3x"></span>
+                        <span id="carouse-next" class="icon-angle-right icon-3x"></span>
+                    </div>
+                    <!--主打推荐-->
+                    <div id="middle-content">
+                        <div><span class="icon-sort-down"></span>&#x3000;主打推荐</div>
+                        <section>
+                            <div id="content" ng-repeat="x in data.tuijian1">
+                                <div><img src="{{x.img}}"></div>
+                                <a href="#">{{x.content}}</a>
+                                <p>定价：￥{{x.price}}</p>
+                                <p>售价：<span>￥{{x.shou}}</span></p>
+                            </div>
+                        </section>
+                        <section>
+                            <div id="content" ng-repeat="x in data.tuijian2">
+                                <div><img src="{{x.img}}"></div>
+                                <a href="#">{{x.content}}</a>
+                                <p>定价：￥{{x.price}}</p>
+                                <p>售价：<span>￥{{x.shou}}</span></p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <!--右侧栏目-->
+                <div id="right">
+                    <aside>
+                        <div id="div-title">近24小时畅销榜<span>更多>></span></div>
+                        <div id="now_list">
+                            <span id="p0" class="now_list" onmousemove="showdiv('0','p','pc')">文学</span>
+                            <span id="p1" onmousemove="showdiv('1','p','pc')">社科</span>
+                            <span id="p2" onmousemove="showdiv('2','p','pc')">少儿</span>
+                            <span id="p3" onmousemove="showdiv('3','p','pc')">生活</span>
+                            <span id="p4" onmousemove="showdiv('4','p','pc')">其他</span>
+                        </div>
+                        <ul id="pc0" class="ranking">
+                            <li id="first-book">
+                                <span>01</span>
+                                <img src="image/changxiao/changxiao1.jpg">
+                                <div>
+                                    <a href="#">飘（上下）</a>
+                                    <p>作者:(美国)玛格...</p>
+                                    <p>出版社:长江文艺出...</p>
+                                    <p>￥50.0 <span>￥19.5</span></p>
+                                </div>
+                            </li>
+                            <li ng-repeat="x in data.p0"><span>{{x.num}}</span> {{x.content}}</li>
+                        </ul>
+                        <ul id="pc1" class="ranking">
+                            <li id="first-book">
+                                <span>01</span>
+                                <img src="image/changxiao/changxiao2.jpg">
+                                <div>
+                                    <a href="#">日常生活的心理分析...</a>
+                                    <p>作者:弗洛伊德(F...</p>
+                                    <p>出版社:北京出版社...</p>
+                                    <p>￥19.8 <span>￥6.9</span></p>
+                                </div>
+                            </li>
+                            <li ng-repeat="x in data.p1"><span>{{x.num}}</span> {{x.content}}</li>
+                        </ul>
+                        <ul id="pc2" class="ranking">
+                            <li id="first-book">
+                                <span>01</span>
+                                <img src="image/changxiao/changxiao3.jpg">
+                                <div>
+                                    <a href="#">什么叫做好.什么叫...</a>
+                                    <p>作者:(俄罗斯) ...</p>
+                                    <p>出版社:湖北教育出...</p>
+                                    <p>￥23.0 <span>￥9.0</span></p>
+                                </div>
+                            </li>
+                            <li ng-repeat="x in data.p2"><span>{{x.num}}</span> {{x.content}}</li>
+                        </ul>
+                        <ul id="pc3" class="ranking">
+                            <li id="first-book">
+                                <span>01</span>
+                                <img src="image/changxiao/changxiao4.jpg">
+                                <div>
+                                    <a href="#">我在印度住了五年</a>
+                                    <p>作者:（美）肯尼迪...</p>
+                                    <p>出版社:上海文化出...</p>
+                                    <p>￥32.8 <span>￥9.8</span></p>
+                                </div>
+                            </li>
+                            <li ng-repeat="x in data.p3"><span>{{x.num}}</span> {{x.content}}</li>
+                        </ul>
+                        <ul id="pc4" class="ranking">
+                            <li id="first-book">
+                                <span>01</span>
+                                <img src="image/changxiao/changxiao5.jpg">
+                                <div>
+                                    <a href="#">飘（上下）</a>
+                                    <p>作者:(美国)玛格...</p>
+                                    <p>出版社:长江文艺出...</p>
+                                    <p>￥50.0 <span>￥19.5</span></p>
+                                </div>
+                            </li>
+                            <li ng-repeat="x in data.p4"><span>{{x.num}}</span> {{x.content}}</li>
+                        </ul>
+                    </aside>
+
+                    <aside>
+                        <div id="div-title"><i class="icon-caret-right"></i>&#x3000;近7天畅销榜</div>
+                        <div id="div-title">近24小时畅销榜<span>更多>></span></div>
+                        <div id="now_list">
+                            <span id="z0" class="now_list" onmousemove="showdiv('0','z','zc')">文学</span>
+                            <span id="z1" onmousemove="showdiv('1','z','zc')">社科</span>
+                            <span id="z2" onmousemove="showdiv('2','z','zc')">少儿</span>
+                            <span id="z3" onmousemove="showdiv('3','z','zc')">艺术</span>
+                            <span id="z4" onmousemove="showdiv('4','z','zc')">其他</span>
+                        </div>
+                        <ul id="zc0" class="ranking">
+                            <li ng-repeat="x in data.z0"><span>{{x.num}}</span> {{x.content}}</li>
+                        </ul>
+                        <ul id="zc1" class="ranking">
+                            <li ng-repeat="x in data.z1"><span>{{x.num}}</span> {{x.content}}</li>
+                        </ul>
+                        <ul id="zc2" class="ranking">
+                            <li ng-repeat="x in data.z2"><span>{{x.num}}</span> {{x.content}}</li>
+                        </ul>
+                        <ul id="zc3" class="ranking">
+                            <li ng-repeat="x in data.z3"><span>{{x.num}}</span> {{x.content}}</li>
+                        </ul>
+                        <ul id="zc4" class="ranking">
+                            <li ng-repeat="x in data.z4"><span>{{x.num}}</span> {{x.content}}</li>
+                        </ul>
+                    </aside>
+                </div>
+
+            </div>
+        </main>
+        <script src="scripts/carouse.js"></script>
+        
+    </body>
+</html>
