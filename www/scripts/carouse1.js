@@ -62,15 +62,15 @@ $(function () {
         scrnews.children("li:last").prependTo(scrnews);
     })
 })
-    function showdiv(Id, divId1, divId2) {
-        for (i = 0; i < 5; i++) {
-            if (i == Id) {
-                $('#'+ (divId1 + i) +'').addClass('now_list');
-                $('#'+ (divId2 + i) +'').css('display', 'block')
-            }
-            else {
-                $('#'+ (divId1 + i) +'').removeClass('now_list');
-                $('#'+ (divId2 + i) +'').css('display', 'none')
-            }
+function showdiv(Id, divId1, divId2) {
+    for (i = 0; i < 5; i++) {
+        if (i == Id) {
+            $('#'+ (divId1 + i) +'').addClass('now_list');
+            $('#'+ (divId2 + i) +'').css('display', 'block')
+        }
+        else {
+            $('#'+ (divId1 + i) +'').removeClass('now_list');
+            $('#'+ (divId2 + i) +'').css('display', 'none')
         }
     }
+}

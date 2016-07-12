@@ -14,6 +14,7 @@
         <script src="scripts/carouse1.js"></script>
     </head>
     <body ng-app="MainPage" ng-controller="MainCtrl">
+        <!--页面头部-->
         <header>
             <section id="logo">
                 <img src="image/logo.png" alt="书呆子logo"><span>书呆子</span>
@@ -86,7 +87,7 @@
                         <ul>
                             <li style="color:red">· 南方洪涝地区，订单配送延迟</li>
                             <li ng-repeat="x in data.news">· {{x.content}}</li>
-                            <li>·关注我们的官方微博：<img src="image/sina.ico" /></li>
+                            <li id="weibo">· 关注我们的官方微博： <img src="image/sina.ico" /></li>
                         </ul>
                     </aside>
                     <aside>
@@ -241,9 +242,145 @@
                         </ul>
                     </aside>
                 </div>
-
+            </div>
+            <!--主页中部淘书团-->
+            <div id="main-middle">
+                <div>淘书团</div>
+                <div id="taoshu">
+                    <section ng-repeat="x in data.taoshu">
+                        <p>{{x.content}}</p>
+                        <img src="{{x.img}}">
+                        <div id="price"><span>￥{{x.price}}</span><span>去校检</span></div>
+                        <p id="zhe"><span>定价：￥{{x.yuan}}</span>&#x3000;&#x3000;<span>折扣：{{x.zhe}}折</span></p>
+                    </section>
+                </div>
+            </div>
+            <!--主页下部-->
+            <div id="main-bottom">
+                <div id="left">
+                    <aside>
+                        <div id="div-title">图书分类<span>更多>></span></div>
+                        <section id="classify" ng-repeat="x in data.classify">
+                            <p>[ {{x.title}} ]</p>
+                            <p><span>{{x.c1}}</span><span>{{x.c2}}</span></p>
+                            <p><span>{{x.c3}}</span><span>{{x.c4}}</span></p>
+                            <p><span>{{x.c5}}</span><span>{{x.c6}}</span></p>
+                            <p><span>{{x.c7}}</span><span>{{x.c8}}</span></p>
+                        </section>
+                        <p>查看更多分类>></p>
+                    </aside>
+                    <aside>
+                        <div id="div-title">名社特卖场<span>更多>></span></div>
+                        <div id="shushe">
+                            <img ng-repeat="x in data.shushe" src="{{x.img}}">
+                        </div>
+                        <ul>
+                            <li ng-repeat="x in data.shushe1">· {{x.content}}</li>
+                        </ul>
+                    </aside>
+                    <aside>
+                        <div id="div-title">最新丛书</div>
+                        <ul>
+                            <li ng-repeat="x in data.newbook">· {{x.content}}</li>
+                        </ul>
+                    </aside>
+                </div>
+                <!--主页下部 分类图书-->
+                <div id="fenlei">
+                    <!--文学、社科、少儿-->
+                    <section ng-repeat="x in data.fenlei">
+                        <div id="div-title">{{x.title}}<span>更多>></span></div>
+                        <div id="books">
+                            <div id="content">
+                                <div><img src="{{x.img}}"></div>
+                                <a href="#">{{x.name}}</a>
+                                <p>定价：￥{{x.price}}</p>
+                                <p>售价：<span>￥{{x.shou}}</span></p>
+                                <p>{{x.content}}</p>
+                            </div>
+                            <div id="content1">
+                                <div id="content" ng-repeat="y in x.books">
+                                    <div><img src="{{y.img}}"></div>
+                                    <a href="#">{{y.name}}</a>
+                                    <p>定价：￥{{y.price}}</p>
+                                    <p>售价：<span>￥{{y.shou}}</span></p>
+                                </div>
+                            </div>
+                            <div id="ul">
+                                <ul ng-repeat="z in x.ul0">
+                                    <li>· {{z.content}}</li>
+                                    <img src="{{z.img}}">
+                                </ul>
+                                <ul>
+                                    <li ng-repeat="r in x.ul">· {{r.content}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <!--艺术、生活、文教-->
+                    <section id="fenlei1" ng-repeat="x in data.fenlei1">
+                        <div id="div-title">{{x.title}}<span>更多>></span></div>
+                        <div id="books">
+                            <div id="content1">
+                                <div id="content" ng-repeat="y in x.books">
+                                    <div><img src="{{y.img}}"></div>
+                                    <a href="#">{{y.name}}</a>
+                                    <p>定价：￥{{y.price}}</p>
+                                    <p>售价：<span>￥{{y.shou}}</span></p>
+                                </div>
+                            </div>
+                            <div id="ul">
+                                <ul ng-repeat="z in x.ul0">
+                                    <li>· {{z.content}}</li>
+                                    <img src="{{z.img}}">
+                                </ul>
+                                <ul>
+                                    <li ng-repeat="r in x.ul">· {{r.content}}</li>
+                                </ul>
+                            </div>
+                        </div>         
+                    </section>
+                </div>
+                <!--超低价专区-->
+                <div id="lower">
+                    <div>
+                        <div id="div-title">超低价专区<span>更多>></span></div>
+                        <div id="content1">
+                            <div id="content" ng-repeat="x in data.lower">
+                                <div><img src="{{x.img}}"></div>
+                                <a href="#">{{x.name}}</a>
+                                <p>定价：￥{{x.price}}</p>
+                                <p>售价：<span>￥{{x.shou}}</span></p>
+                            </div>
+                        </div>
+                        <div id="lower1">
+                            <p ng-repeat="x in data.lower1">{{x.name}}<span>售价：￥{{x.price}}</span></p>
+                        </div>
+                    </div>
+                    <div id="right">
+                        <aside>
+                            <div id="div-title">典藏榜<span>更多>></span></div>
+                            <ul class="ranking">
+                                <li id="first-book" ng-repeat="x in data.dian">
+                                    <span>01</span>
+                                    <img src="{{x.img}}">
+                                    <div>
+                                        <a href="#">{{x.name}}</a>
+                                        <p>作者：{{x.author}}</p>
+                                        <p>出版社：{{x.press}}</p>
+                                        <p>￥{{x.price}} <span>￥{{x.shou}}</span></p>
+                                    </div>
+                                </li>
+                                <li ng-repeat="x in data.diancang"><span>{{x.num}}</span> {{x.content}}</li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
             </div>
         </main>
+        <footer>
+            
+        </footer>
         <script src="scripts/carouse.js"></script>
         
     </body>
