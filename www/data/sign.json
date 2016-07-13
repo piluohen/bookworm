@@ -1,0 +1,19 @@
+{
+    "li":[
+        {"img":"../image/sign/sign1.jpg","name":"人物画谱-平","price":"13.0","shou":"5.1"},
+        {"img":"../image/sign/sign2.jpg","name":"小王子","price":"5.0","shou":"1.5"},
+        {"img":"../image/sign/sign3.jpg","name":"莫泊桑短篇小说精选","price":"9.2","shou":"2.7"},
+        {"img":"../image/sign/sign4.jpg","name":"梅兰芳游美记","price":"25.0","shou":"9.8"},
+        {"img":"../image/sign/sign5.jpg","name":"我的朋友胡适之……(现代文化名人印象记)","price":"16.0","shou":"7.2"},
+        {"img":"../image/sign/sign6.jpg","name":"沈从文晚年口述","price":"28.0","shou":"10.9"},
+        {"img":"../image/sign/sign7.jpg","name":"瑜珈熊和你一起做游戏·好玩的游戏","price":"3.8","shou":"0.8"},
+        {"img":"../image/sign/sign8.jpg","name":"修道院纪事","price":"10.0","shou":"2.5"},
+        {"img":"../image/sign/sign9.jpg","name":"汪荣祖人物书系--康有为论","price":"22.0","shou":"9.0"},
+        {"img":"../image/sign/sign10.jpg","name":"洵美文存","price":"30.0","shou":"13.5"},
+        {"img":"../image/sign/sign11.jpg","name":"齐如山文论","price":"36.0","shou":"14.0"},
+        {"img":"../image/sign/sign12.jpg","name":"历代花鸟诗","price":"17.0","shou":"5.4"},
+        {"img":"../image/sign/sign13.jpg","name":"新评新注--宋词三百首","price":"15.0","shou":"7.1"},
+        {"img":"../image/sign/sign14.jpg","name":"罕为人知的中日结盟及其他:晚清中日关系史新探","price":"30.0","shou":"10.2"},
+        {"img":"../image/sign/sign15.jpg","name":"捕捉儿童敏感期","price":"28.0","shou":"8.0"}
+    ]
+}

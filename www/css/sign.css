@@ -1,0 +1,138 @@
+form{
+    width: 600px;
+    margin: 25px auto;
+    border: 1px solid #e6e6e6;
+    font-size: 15px;
+}
+h2{
+    font-size: 21px;
+    font-weight: normal;
+    color: #fc9400;
+    border-bottom: 1px solid #e6e6e6;
+    background-image: linear-gradient(to bottom, #ffffff,#f9f9f9,#f6f6f6);
+    margin: 0;
+    padding: 5px 20px;
+}
+label,input{
+    display: inline-block;
+    width: 150px;
+    height: 32px;
+}
+label{
+    text-align: right;
+}
+input{
+    width: 240px;
+    padding: 0 5px;
+    border: none;
+    border: 1px solid #c6c6c6;
+    border-radius: 5px;
+}
+input[type=submit]{
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    background-image: linear-gradient(to bottom,#ffb400,#fc9400,#fa7202);
+}
+form>div{
+    margin: 10px 30px;
+}
+form span{
+    cursor: pointer;
+    color: dodgerblue;
+    font-size: 14px;
+}
+form>div>div{
+    font-size: 14px;
+}
+form>div>div>img{
+    width: 240px;
+    height: 50px;
+    border: 1px solid #c6c6c6;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+#submit>span{
+    color: #fa7202;
+    font-size: 16px;
+}
+#weibo{
+    border-top: 1px dotted #c6c6c6;
+    margin: 20px 20px 0 20px;
+    text-align: center;
+    padding: 15px 0;
+}
+#weibo>span{
+    padding: 0 20px;
+}
+#recom{
+    position: relative;
+    width: 100%;
+    font-size: 13px;
+    border: 1px solid #e6e6e6;
+    margin: 25px 0;
+}
+#recom>h2{
+    font-size: 16px;
+    height: 30px;
+    padding: 3px 20px;
+}
+#outer{
+    width: 880px;
+    height: 230px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+#inner{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+ul{
+    width: 2640px;
+    height: 230px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+ul>li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    display: inline-block;
+    width: 160px;
+    text-align: center;
+}
+ul>li img{
+    display: block;
+    margin: 20px auto;
+}
+#outer a{
+    display: inline-block;
+    height: 36px;
+    color: #666;
+    text-decoration: none;
+}
+#outer p{
+    margin: 5px;
+}
+#left,#right{
+    width: 30px;
+    height: 60px;
+    position: absolute;
+    top: 110px;
+    font-size: 35px;
+    padding: 5px 0;
+    text-align: center;
+    cursor: pointer;
+}
+#left{
+    left: 0;
+    background-image: linear-gradient(to left, #f9f9f9,#f6f6f6,#e6e6e6);
+}
+#right{
+    right: 0;
+    background-image: linear-gradient(to right, #f9f9f9,#f6f6f6,#e6e6e6);
+}

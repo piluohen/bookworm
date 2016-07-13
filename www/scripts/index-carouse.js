@@ -28,7 +28,6 @@
 // })
 
 $(function () {
-    var xhRight = null;
     var scrnews = $("#carouse");
 
     if (scrnews.children().length < 3) { return false; }

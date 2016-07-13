@@ -5,4 +5,6 @@ const   express = require('express'),
 
 app.use(express.static('www'))
 
+
+
 app.listen(3000, err => console.log('正在运行...'))
