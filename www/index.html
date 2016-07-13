@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="author" content="皮帅帅">
-        <link rel="shortcut icon" href="favicon.png" type="image/png">
-        <link rel="icon" href="favicon.png" type="image/png">
+        <link rel="shortcut icon" href="image/zatu/favicon.png" type="image/png">
+        <link rel="icon" href="image/zatu/favicon.png" type="image/png">
         <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css">
         <link rel="stylesheet" href="css/index.css">
         <title>书呆子-首页</title>
@@ -17,10 +17,10 @@
         <!--页面头部-->
         <header>
             <section id="logo">
-                <img src="image/logo.png" alt="书呆子logo"><span>书呆子</span>
+                <img src="image/zatu/logo.png" alt="书呆子logo"><span>书呆子</span>
             </section>
             <section id="my">
-                <span>花径不曾缘客扫，蓬门今始为君开&#x3000;</span>
+                <i>花径不曾缘客扫，蓬门今始为君开&#x3000;</i>
                 <span>请登录</span>
                 <span>免费注册</span>
                 <span>购物车</span>
@@ -40,38 +40,22 @@
                 </div>
             </nav>
             <section id="title">
-                <span>畅销书</span>
-                <span>文学</span>
-                <span>社科</span>
-                <span>少儿</span>
-                <span>生活</span>
-                <span>艺术</span>
-                <span>文教</span>
-                <span>分类浏览</span>
-                <span>出版社浏览</span>
-                <span>闲情雅趣</span>
-                <span>诗书会</span>
+                <span ng-repeat="x in data.title">{{x.name}}</span>
             </section>
         </header>
 
         <!--向上轮播图-->
         <div id="outer">
             <div id="inner">
-                <img src="image/carouse/carouse-1.jpg" alt="暑期书单满99减50，精选图书限时直降">
-                <img src="image/carouse/carouse-2.jpg" alt="“《李樯作品集》4册”">
-                <img src="image/carouse/carouse-3.jpg" alt="“《精神家园丛书》全4册”">
-                <img src="image/carouse/carouse-4.jpg" alt="“《堂吉诃德》上下卷”">
-                <img src="image/carouse/carouse-5.jpg" alt="奇葩养成课——好口才进阶书单">
+                <img ng-repeat="x in data.inner" src="{{x.img}}" alt="{{x.alt}}">
             </div>
             <ul>
                 <li class="current">暑期书单满99减50，精选图书限时直降</li>
-                <li>金马奖编剧《李樯作品集》4册，还原了电影中的所有删节部分</li>
-                <li>《精神家园丛书》全4册，对构筑精神家园进行思想探索</li>
-                <li>《堂吉诃德》上下卷，配有达利的三十八幅精美插图</li>
-                <li>奇葩养成课——好口才进阶书单</li>
+                <li ng-repeat="x in data.current">{{x.content}}</li>
             </ul>
         </div>
 
+        <!--页面主体-->
         <main>
             <div id="main-top">
                 <!--主页上部左侧栏目-->
@@ -87,7 +71,7 @@
                         <ul>
                             <li style="color:red">· 南方洪涝地区，订单配送延迟</li>
                             <li ng-repeat="x in data.news">· {{x.content}}</li>
-                            <li id="weibo">· 关注我们的官方微博： <img src="image/sina.ico" /></li>
+                            <li id="weibo">· 关注我们的官方微博： <img src="image/zatu/sina.ico" /></li>
                         </ul>
                     </aside>
                     <aside>
@@ -137,7 +121,7 @@
                         </section>
                     </div>
                 </div>
-                <!--右侧栏目-->
+                <!--右侧栏目畅销栏目-->
                 <div id="right">
                     <aside>
                         <div id="div-title">近24小时畅销榜<span>更多>></span></div>
@@ -148,70 +132,18 @@
                             <span id="p3" onmousemove="showdiv('3','p','pc')">生活</span>
                             <span id="p4" onmousemove="showdiv('4','p','pc')">其他</span>
                         </div>
-                        <ul id="pc0" class="ranking">
+                        <ul ng-repeat="x in data.changxiao" id="{{x.pc}}" class="ranking">
                             <li id="first-book">
                                 <span>01</span>
-                                <img src="image/changxiao/changxiao1.jpg">
+                                <img src="{{x.img}}">
                                 <div>
-                                    <a href="#">飘（上下）</a>
-                                    <p>作者:(美国)玛格...</p>
-                                    <p>出版社:长江文艺出...</p>
-                                    <p>￥50.0 <span>￥19.5</span></p>
+                                    <a href="#">{{x.name}}</a>
+                                    <p>作者：{{x.author}}</p>
+                                    <p>出版社：{{x.press}}</p>
+                                    <p>￥{{x.price}} <span>￥{{x.shou}}</span></p>
                                 </div>
                             </li>
-                            <li ng-repeat="x in data.p0"><span>{{x.num}}</span> {{x.content}}</li>
-                        </ul>
-                        <ul id="pc1" class="ranking">
-                            <li id="first-book">
-                                <span>01</span>
-                                <img src="image/changxiao/changxiao2.jpg">
-                                <div>
-                                    <a href="#">日常生活的心理分析...</a>
-                                    <p>作者:弗洛伊德(F...</p>
-                                    <p>出版社:北京出版社...</p>
-                                    <p>￥19.8 <span>￥6.9</span></p>
-                                </div>
-                            </li>
-                            <li ng-repeat="x in data.p1"><span>{{x.num}}</span> {{x.content}}</li>
-                        </ul>
-                        <ul id="pc2" class="ranking">
-                            <li id="first-book">
-                                <span>01</span>
-                                <img src="image/changxiao/changxiao3.jpg">
-                                <div>
-                                    <a href="#">什么叫做好.什么叫...</a>
-                                    <p>作者:(俄罗斯) ...</p>
-                                    <p>出版社:湖北教育出...</p>
-                                    <p>￥23.0 <span>￥9.0</span></p>
-                                </div>
-                            </li>
-                            <li ng-repeat="x in data.p2"><span>{{x.num}}</span> {{x.content}}</li>
-                        </ul>
-                        <ul id="pc3" class="ranking">
-                            <li id="first-book">
-                                <span>01</span>
-                                <img src="image/changxiao/changxiao4.jpg">
-                                <div>
-                                    <a href="#">我在印度住了五年</a>
-                                    <p>作者:（美）肯尼迪...</p>
-                                    <p>出版社:上海文化出...</p>
-                                    <p>￥32.8 <span>￥9.8</span></p>
-                                </div>
-                            </li>
-                            <li ng-repeat="x in data.p3"><span>{{x.num}}</span> {{x.content}}</li>
-                        </ul>
-                        <ul id="pc4" class="ranking">
-                            <li id="first-book">
-                                <span>01</span>
-                                <img src="image/changxiao/changxiao5.jpg">
-                                <div>
-                                    <a href="#">飘（上下）</a>
-                                    <p>作者:(美国)玛格...</p>
-                                    <p>出版社:长江文艺出...</p>
-                                    <p>￥50.0 <span>￥19.5</span></p>
-                                </div>
-                            </li>
-                            <li ng-repeat="x in data.p4"><span>{{x.num}}</span> {{x.content}}</li>
+                            <li ng-repeat="y in x.p"><span>{{y.num}}</span> {{y.content}}</li>
                         </ul>
                     </aside>
 
@@ -378,8 +310,25 @@
                 </div>
             </div>
         </main>
+        <!--首页尾部-->
         <footer>
-            
+            <div>
+                <ul ng-repeat="x in data.footer">
+                    <h3>{{x.h3}}</h3>
+                    <li ng-repeat="y in x.li">· {{y.content}}</li>
+                </ul>
+            </div>
+            <div>
+                <img src="image/zatu/chengxin.jpg" alt="诚信网站">
+                <img src="image/zatu/danwei.gif" alt="中国电子商务诚信单位">
+                <p>
+                    <span>经营许可证编号：京ICP备09013606号-3</span>&#x3000;
+                    <span>京信市监发[2002]122号</span>&#x3000;
+                    海淀公安分局备案编号：1101083394
+                    <span>营业执照</span>&#x3000;
+                    <span>出版物经营许可证</span>
+                </p>
+            </div>
         </footer>
         <script src="scripts/carouse.js"></script>
         

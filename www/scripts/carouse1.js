@@ -62,6 +62,7 @@ $(function () {
         scrnews.children("li:last").prependTo(scrnews);
     })
 })
+
 function showdiv(Id, divId1, divId2) {
     for (i = 0; i < 5; i++) {
         if (i == Id) {

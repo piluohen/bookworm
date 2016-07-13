@@ -4,7 +4,6 @@ function getCss(ele, attr) {
 	} else {
 		return parseFloat(ele.currentStyle[attr]);
 	}
-
 }
 function buffer(ele, attr, target, fnCallback) {
 	window.clearTimeout(ele.timer);
