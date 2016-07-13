@@ -16,7 +16,7 @@
     <body ng-app="">
         <header ng-include="'views/header.html'"></header>
         <main>
-            <form action="#">
+            <form action="post">
                 <h2>新用户注册</h2>
                 <div>
                     <label for="username">用户名：</label>
@@ -38,8 +38,12 @@
                     <label for="email">邮箱：</label>
                     <input type="email" name="email" id="email" placeholder="请输入电子邮箱">
                 </div>
-                <div>
-                    <input type="radio" >
+                <div id="sex">
+                    <label for="#">性别：</label>
+                    <input type="radio" id="male" name="ismale">
+                    <label for="male">男</label>
+                    <input type="radio" id="female" name="ismale">
+                    <label for="female">女</label>
                 </div>
                 <div>
                     <label for="code">请输入验证码：</label>

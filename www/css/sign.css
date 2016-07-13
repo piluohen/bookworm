@@ -136,3 +136,20 @@ ul>li img{
     right: 0;
     background-image: linear-gradient(to right, #f9f9f9,#f6f6f6,#e6e6e6);
 }
+label[for=male],
+label[for=female]{
+    width: 30px;
+    height: 32px;
+    text-align: left;
+}
+input[type=radio]{
+    width: 20px;
+    height: 32px;
+}
+#sex{
+    height: 37.5px;
+}
+#sex>label{
+    position: relative;
+    top: -10px;
+}
