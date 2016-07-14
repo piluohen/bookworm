@@ -20,6 +20,7 @@ label,input{
 }
 label{
     text-align: right;
+    line-height: 32px;
 }
 input{
     width: 240px;
@@ -44,6 +45,9 @@ form span{
 }
 form>div>div{
     font-size: 14px;
+}
+form>div>i{
+    padding-left: 10px;
 }
 form>div>div>img{
     width: 240px;
@@ -145,6 +149,7 @@ label[for=female]{
 input[type=radio]{
     width: 20px;
     height: 32px;
+    margin-right: -3px;
 }
 #sex{
     height: 37.5px;
@@ -152,4 +157,17 @@ input[type=radio]{
 #sex>label{
     position: relative;
     top: -10px;
+}
+.icon-ok-sign{
+    color: green
+}
+.icon-remove-sign{
+    color: red
+}
+input[type=submit]:disabled{
+    color: #666;
+    background-image: linear-gradient(to right, #f9f9f9,#f6f6f6,#e6e6e6);
+}
+#password-error{
+    color: red;
 }

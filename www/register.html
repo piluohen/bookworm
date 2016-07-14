@@ -6,48 +6,58 @@
         <link rel="shortcut icon" href="image/zatu/favicon.png" type="image/png">
         <link rel="icon" href="image/zatu/favicon.png" type="image/png">
         <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css">
-        <title>书呆子-登录</title>
+        <title>书呆子-注册</title>
         <link rel="stylesheet" href="css/header.css">
         <link rel="stylesheet" href="css/sign.css">
         <script src="libs/angular.js"></script>
+        <script src="libs/angular-resource.js"></script>
         <script src="libs/jquery.min.js"></script>
-        <script src="scripts/register.js"></script>
+        
     </head>
-    <body ng-app="">
+    <body ng-app="Reg" ng-controller="RegCtrl">
         <header ng-include="'views/header.html'"></header>
         <main>
-            <form action="post">
+            <form name="form" ng-submit="save()">
                 <h2>新用户注册</h2>
-                <div>
+                <div id="username">
                     <label for="username">用户名：</label>
-                    <input type="text" name="username" id="username" placeholder="请输入用户名">
+                    <input type="text" ng-model="reg.username" name="username" id="username" ng-pattern="'[0-9a-zA-z]{6,16}'" required autofocus placeholder="请输入用户名">
+                    <i class="icon-ok-sign" ng-show="form.username.$valid && form.username.$dirty"></i>
+                    <i class="icon-remove-sign" ng-show="form.username.$invalid && form.username.$dirty" title="用户名只能是6到16位的字母或数字"></i>
                 </div>
                 <div>
                     <label for="password">密码：</label>
-                    <input type="password" name="password" id="password" placeholder="请输入密码">
+                    <input type="password" ng-model="reg.password" name="password" id="password" ng-minlength="6" ng-maxlength="32" required placeholder="请输入密码">
+                    <i class="icon-ok-sign" ng-show="form.password.$valid && form.password.$dirty"></i>
+                    <i class="icon-remove-sign" ng-show="form.password.$invalid && form.password.$dirty" title="密码是6到32位的字符"></i>
                 </div>
                 <div>
-                    <label for="password">重复密码：</label>
-                    <input type="password" id="password" placeholder="请再次输入密码">
+                    <label for="repassword">重复密码：</label>
+                    <input type="password" id="repassword" required placeholder="请再次输入密码">
+                    <i id="password-error"></i>
                 </div>
                 <div>
                     <label for="phone">手机号：</label>
-                    <input type="tel" name="phone" id="phone" placeholder="请输入手机号">
+                    <input type="tel" ng-model="reg.phone" name="phone" id="phone" ng-pattern="'1[34578][0-9]{9}'" placeholder="请输入手机号">
+                    <i class="icon-ok-sign" ng-show="form.phone.$valid && form.phone.$dirty"></i>
+                    <i class="icon-remove-sign" ng-show="form.phone.$invalid && form.phone.$dirty"></i>
                 </div>
                 <div>
                     <label for="email">邮箱：</label>
-                    <input type="email" name="email" id="email" placeholder="请输入电子邮箱">
+                    <input type="email" ng-model="reg.email" name="email" id="email" ng-maxlength="32" placeholder="请输入电子邮箱">
+                    <i class="icon-ok-sign" ng-show="form.email.$valid && form.email.$dirty"></i>
+                    <i class="icon-remove-sign" ng-show="form.email.$invalid && form.email.$dirty" title="邮箱号不能超过32个字符"></i>
                 </div>
                 <div id="sex">
                     <label for="#">性别：</label>
-                    <input type="radio" id="male" name="ismale">
+                    <input type="radio" ng-model="reg.isMale" id="male" value="male" name="isMale">
                     <label for="male">男</label>
-                    <input type="radio" id="female" name="ismale">
+                    <input type="radio" ng-model="reg.isMale" id="female" value="female" name="isMale">
                     <label for="female">女</label>
                 </div>
                 <div>
                     <label for="code">请输入验证码：</label>
-                    <input type="text" name="code" id="code" placeholder="请输入验证码">
+                    <input type="text" ng-model="reg.code" name="code" id="code" placeholder="请输入验证码">
                     <div>
                         <label for=""></label>
                         <img src="image/sign/code.jpg">&#x3000;看不清？<span> 换张图</span>
@@ -55,10 +65,11 @@
                 </div>
                 <div id="submit">
                     <label for=""></label>
-                    <input type="submit" value="提 交 注 册">
+                    <input type="submit" ng-disabled="form.$invalid" value="提 交 注 册">
                 </div>
             </form>
         </main>
         <footer ng-include="'views/footer.html'"></footer>
+        <script src="scripts/register.js"></script>
     </body>
 </html>

@@ -1,4 +1,4 @@
-const mongo = require('mongoose')
+// const mongo = require('mongoose')
 
 // mongo.connect('mongodb://127.0.0.1/zy-tasks')
 // const conn = mongo.connection

@@ -1,6 +1,6 @@
 $(function(){
-    $('#left').css('color','orange')
-    $('#left').click(function(){
+    $('#right').css('color','orange')
+    $('#right').click(function(){
         var n = $('#outer>input').val()
         if(n<=0 && n>= -1){
             $('#left').css('color','orange')
@@ -11,10 +11,10 @@ $(function(){
             $('#outer>input').val(n-1)
         }
         if(n<0){
-            $('#left').css('color','#666')
+            $('#right').css('color','#666')
         }
     })
-    $('#right').click(function(){
+    $('#left').click(function(){
         var n = parseInt($('#outer>input').val())
         if(n>= -2 && n<0){
             $('#left').css('color','orange')
@@ -25,7 +25,7 @@ $(function(){
             $('#outer>input').val(n+1)
         }
         if(n>=-1){
-            $('#right').css('color','#666')
+            $('#left').css('color','#666')
         }
     })
 })
