@@ -88,5 +88,11 @@ app.post('/user/signin', (req, res) => {
     })
 })
 
+/*--------------------退出--------------------*/
+
+app.get('/user/signout', (req, res) => {
+    res.clearCookie('username')
+    res.status(200).json({code: 'success'})
+})
 
 app.listen(3000, err => console.log('正在运行...'))

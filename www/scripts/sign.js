@@ -1,8 +1,21 @@
 var m = angular.module('Sign',[])
-m.controller('SignCtrl', ['$scope','$http', function($scope,$http){
+m.controller('SignCtrl', ['$scope','$http','$window', function($scope,$http,$window){
     $http.get('/data/sign.json').success(function(res){
         $scope.data = res
     })
+
+    $scope.save = function(){
+        $http.post('/user/signin', $scope.sign).then(function(res){
+            console.log(res.data)
+            // $('#my>span:first').text($scope.sign.username)
+            // $('#my>span:eq(1)').text('退出登录').on('click',function(){
+            //     $('#my>span:first').text('请登录')
+            //     $(this).text('免费注册').remove
+            // })
+            $window.location.href = 'index.html'
+        })
+    }
+    
     $(function(){
         $('#right').css('color','orange')
         $('#right').click(function(){

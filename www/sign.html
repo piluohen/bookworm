@@ -17,20 +17,20 @@
     <body ng-app="Sign" ng-controller="SignCtrl">
         <header ng-include="'views/header.html'"></header>
         <main>
-            <form>
+            <form ng-submit="save()">
                 <h2>用户登录</h2>
                 <div>
                     <label for="username">用户名：</label>
-                    <input type="text" name="username" id="username" placeholder="请输入用户名">
+                    <input type="text" name="username" id="username" ng-model="sign.username" placeholder="请输入用户名">
                 </div>
                 <div>
                     <label for="password">密码：</label>
-                    <input type="password" name="password" id="password" placeholder="请输入密码">
+                    <input type="password" name="password" id="password" ng-model="sign.password" placeholder="请输入密码">
                     <span>&#x3000;忘记密码？</span>
                 </div>
                 <div>
                     <label for="code">请输入验证码：</label>
-                    <input type="text" name="code" id="code" placeholder="请输入验证码">
+                    <input type="text" name="code" id="code" ng-model="sign.code" placeholder="请输入验证码">
                     <div>
                         <label for=""></label>
                         <img src="image/sign/code.jpg">&#x3000;看不清？<span> 换张图</span>

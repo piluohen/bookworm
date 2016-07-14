@@ -7,7 +7,6 @@ m.controller('RegCtrl',['$scope','$http','$window',function($scope,$http,$window
         
         if(pass[0] == pass[1]){
             $('#password-error').text('')
-
             $http.post('/user/register', $scope.reg).then(function(res){
                 console.log(res.data.message)
                 if(res.data.code == 'registered'){
@@ -22,7 +21,6 @@ m.controller('RegCtrl',['$scope','$http','$window',function($scope,$http,$window
                 }else{
                     $window.location.href = 'sign.html'
                 }
-                
             })
         }
         else{
