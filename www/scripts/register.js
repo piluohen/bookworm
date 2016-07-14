@@ -1,4 +1,4 @@
-var m = angular.module('Reg',[])
+var m = angular.module('myApp',[])
 m.controller('RegCtrl',['$scope','$http','$window',function($scope,$http,$window){
     $scope.save = function(){
         var pass = $(':password').map(function(){

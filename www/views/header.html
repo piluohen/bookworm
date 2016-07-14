@@ -1,10 +1,10 @@
 <section id="logo" onclick="location.href='index.html'">
     <img src="../image/zatu/logo.png" alt="书呆子logo"><span>书呆子</span>
 </section>
-<section id="my">
+<section id="my" ng-controller="Header">
     <i>花径不曾缘客扫，蓬门今始为君开&#x3000;</i>
-    <span onclick="location.href='sign.html'">请登录</span>
-    <span onclick="location.href='register.html'">免费注册</span>
+    <span id="sign" ng-click="sign()">请登录</span>
+    <span id="register">免费注册</span>
     <span>购物车(0)</span>
     <span>书架</span>
     <span>订单</span>

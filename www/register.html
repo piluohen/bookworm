@@ -12,9 +12,10 @@
         <script src="libs/angular.js"></script>
         <script src="libs/angular-resource.js"></script>
         <script src="libs/jquery.min.js"></script>
-        
+        <script src="libs/jquery.cookie.js"></script>
+        <script src="scripts/header.js"></script>
     </head>
-    <body ng-app="Reg" ng-controller="RegCtrl">
+    <body ng-app="myApp" ng-controller="RegCtrl">
         <header ng-include="'views/header.html'"></header>
         <main>
             <form name="form" ng-submit="save()">
