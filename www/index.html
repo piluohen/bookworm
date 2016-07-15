@@ -1,338 +1,79 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="author" content="皮帅帅">
-        <link rel="shortcut icon" href="image/zatu/favicon.png" type="image/png">
-        <link rel="icon" href="image/zatu/favicon.png" type="image/png">
-        <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css">
-        <link rel="stylesheet" href="css/index.css">
-        <title>书呆子-首页</title>
-        <script src="libs/angular.js"></script>
-        <script src="libs/jquery.min.js"></script>
-        <script src="libs/jquery.cookie.js"></script>
-        <script src="scripts/index.js"></script>
-        <script src="scripts/index-carouse.js"></script>
-        <!--<script src="scripts/header.js"></script>-->
-    </head>
-    <body ng-app="myApp" ng-controller="MainCtrl">
-        <!--页面头部-->
-        <header>
-            <section id="logo">
-                <img src="image/zatu/logo.png" alt="书呆子logo"><span>书呆子</span>
-            </section>
-            <section id="my">
-                <i>舍南舍北皆春水，但见群鸥日日来&#x3000;</i>
-                <span id="sign">请登录</span>
-                <span id="register">免费注册</span>
-                <span>购物车</span>
-                <span>书架</span>
-                <span>订单</span>
-                <span>帮助</span>
-            </section>
-            <nav>
-                <div>
-                    <span class="checked">首页</span>
-                    <span>特卖</span>
-                    <span>淘宝团</span>
-                </div>
-                <div>
-                    <input type="text" placeholder="平凡的世界" autofocus>
-                    <span>搜索</span>
-                </div>
-            </nav>
-            <section id="title">
-                <span ng-repeat="x in data.title">{{x.name}}</span>
-            </section>
-        </header>
-
-        <!--向上轮播图-->
-        <div id="outer">
-            <div id="inner">
-                <img ng-repeat="x in data.inner" ng-src="{{x.img}}" alt="{{x.alt}}">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="皮帅帅">
+    <link rel="shortcut icon" href="image/zatu/favicon.png" type="image/png">
+    <link rel="icon" href="image/zatu/favicon.png" type="image/png">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>书呆子-首页</title>
+    <script src="libs/angular.js"></script>
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/jquery.cookie.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/header.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="MainCtrl" ng-init="page='views/taobao.html'">
+    <header>
+        <section id="logo">
+            <img src="image/zatu/logo.png" alt="书呆子logo"><span>书呆子</span>
+        </section>
+        <section id="my" ng-controller="Header">
+            <i>舍南舍北皆春水，但见群鸥日日来&#x3000;</i>
+            <span id="sign">请登录</span>
+            <span id="register">免费注册</span>
+            <span>购物车</span>
+            <span>书架</span>
+            <span>订单</span>
+            <span>帮助</span>
+        </section>
+        <nav>
+            <div>
+                <span id="page" class="checked" ng-click="page='views/page.html'">首页</span>
+                <span id="sale" ng-click="page='views/sale.html'">批发</span>
+                <span id="taobao" ng-click="page='views/taobao.html'">淘宝团</span>
             </div>
-            <ul>
-                <li class="current">暑期书单满99减50，精选图书限时直降</li>
-                <li ng-repeat="x in data.current">{{x.content}}</li>
+            <div>
+                <input type="text" placeholder="平凡的世界" autofocus>
+                <span>搜索</span>
+            </div>
+        </nav>
+        <section id="title">
+            <span ng-repeat="x in data.title">{{x.name}}</span>
+        </section>
+    </header>
+    <!--向上轮播图-->
+    <div id="outer">
+        <div id="inner">
+            <img ng-repeat="x in data.inner" ng-src="{{x.img}}" alt="{{x.alt}}">
+        </div>
+        <ul id="btn">
+            <li class="current">暑期书单满99减50，精选图书限时直降</li>
+            <li ng-repeat="x in data.current">{{x.content}}</li>
+        </ul>
+    </div>
+
+    <main ng-include="page"></main>
+    <!--底部-->
+    <footer>
+        <div>
+            <ul ng-repeat="x in data.footer">
+                <h3>{{x.h3}}</h3>
+                <li ng-repeat="y in x.li">· {{y.content}}</li>
             </ul>
         </div>
-
-        <!--页面主体-->
-        <main>
-            <div id="main-top">
-                <!--主页上部左侧栏目-->
-                <div id="left">
-                    <aside>
-                        <div id="div-title">新到特价书精选<span>更多>></span></div>
-                        <ul>
-                            <li ng-repeat="x in data.book1">· {{x.content}}</li>
-                        </ul>
-                    </aside>
-                    <aside>
-                        <div id="div-title">公告</div>
-                        <ul>
-                            <li style="color:red">· 南方洪涝地区，订单配送延迟</li>
-                            <li ng-repeat="x in data.news">· {{x.content}}</li>
-                            <li id="weibo">· 关注我们的官方微博： <img src="image/zatu/sina.ico" /></li>
-                        </ul>
-                    </aside>
-                    <aside>
-                        <div id="div-title">书讯</div>
-                        <ul>
-                            <li class="borderline" ng-repeat="x in data.press1"><span class="icon-angle-right"> </span>{{x.content}}</li>
-                            <li ng-repeat="x in data.press">· {{x.content}}</li>
-                        </ul>
-                    </aside>
-                </div>
-
-                <div id="middle">
-                    <!--中间向左轮播图-->
-                    <div id="middle-carouse">
-                        <ul id="carouse">
-                            <li>
-                                <img ng-repeat="x in data.img1" ng-src="{{x.img}}">
-                            </li>
-                            <li>
-                                <img ng-repeat="x in data.img2" ng-src="{{x.img}}">
-                            </li>
-                            <li>
-                                <img ng-repeat="x in data.img3" ng-src="{{x.img}}">
-                            </li>
-                        </ul>
-                        <span id="carouse-prev" class="icon-angle-left icon-3x"></span>
-                        <span id="carouse-next" class="icon-angle-right icon-3x"></span>
-                    </div>
-                    <!--主打推荐-->
-                    <div id="middle-content">
-                        <div><span class="icon-sort-down"></span>&#x3000;主打推荐</div>
-                        <section>
-                            <div id="content" ng-repeat="x in data.tuijian1">
-                                <div><img ng-src="{{x.img}}"></div>
-                                <a href="#">{{x.content}}</a>
-                                <p>定价：￥{{x.price}}</p>
-                                <p>售价：<span>￥{{x.shou}}</span></p>
-                            </div>
-                        </section>
-                        <section>
-                            <div id="content" ng-repeat="x in data.tuijian2">
-                                <div><img ng-src="{{x.img}}"></div>
-                                <a href="#">{{x.content}}</a>
-                                <p>定价：￥{{x.price}}</p>
-                                <p>售价：<span>￥{{x.shou}}</span></p>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-                <!--右侧栏目畅销栏目-->
-                <div id="right">
-                    <aside>
-                        <div id="div-title">近24小时畅销榜<span>更多>></span></div>
-                        <div id="now_list">
-                            <span id="p0" class="now_list" onmousemove="showdiv('0','p','pc')">文学</span>
-                            <span id="p1" onmousemove="showdiv('1','p','pc')">社科</span>
-                            <span id="p2" onmousemove="showdiv('2','p','pc')">少儿</span>
-                            <span id="p3" onmousemove="showdiv('3','p','pc')">生活</span>
-                            <span id="p4" onmousemove="showdiv('4','p','pc')">其他</span>
-                        </div>
-                        <ul ng-repeat="x in data.changxiao" id="{{x.pc}}" class="ranking">
-                            <li id="first-book">
-                                <span>01</span>
-                                <img ng-src="{{x.img}}">
-                                <div>
-                                    <a href="#">{{x.name}}</a>
-                                    <p>作者：{{x.author}}</p>
-                                    <p>出版社：{{x.press}}</p>
-                                    <p>￥{{x.price}} <span>￥{{x.shou}}</span></p>
-                                </div>
-                            </li>
-                            <li ng-repeat="y in x.p"><span>{{y.num}}</span> {{y.content}}</li>
-                        </ul>
-                    </aside>
-
-                    <aside>
-                        <div id="div-title"><i class="icon-caret-right"></i>&#x3000;近7天畅销榜</div>
-                        <div id="div-title">近24小时畅销榜<span>更多>></span></div>
-                        <div id="now_list">
-                            <span id="z0" class="now_list" onmousemove="showdiv('0','z','zc')">文学</span>
-                            <span id="z1" onmousemove="showdiv('1','z','zc')">社科</span>
-                            <span id="z2" onmousemove="showdiv('2','z','zc')">少儿</span>
-                            <span id="z3" onmousemove="showdiv('3','z','zc')">艺术</span>
-                            <span id="z4" onmousemove="showdiv('4','z','zc')">其他</span>
-                        </div>
-                        <ul id="zc0" class="ranking">
-                            <li ng-repeat="x in data.z0"><span>{{x.num}}</span> {{x.content}}</li>
-                        </ul>
-                        <ul id="zc1" class="ranking">
-                            <li ng-repeat="x in data.z1"><span>{{x.num}}</span> {{x.content}}</li>
-                        </ul>
-                        <ul id="zc2" class="ranking">
-                            <li ng-repeat="x in data.z2"><span>{{x.num}}</span> {{x.content}}</li>
-                        </ul>
-                        <ul id="zc3" class="ranking">
-                            <li ng-repeat="x in data.z3"><span>{{x.num}}</span> {{x.content}}</li>
-                        </ul>
-                        <ul id="zc4" class="ranking">
-                            <li ng-repeat="x in data.z4"><span>{{x.num}}</span> {{x.content}}</li>
-                        </ul>
-                    </aside>
-                </div>
-            </div>
-            <!--主页中部淘书团-->
-            <div id="main-middle">
-                <div>淘书团</div>
-                <div id="taoshu">
-                    <section ng-repeat="x in data.taoshu">
-                        <p>{{x.content}}</p>
-                        <img ng-src="{{x.img}}">
-                        <div id="price"><span>￥{{x.price}}</span><span>去校检</span></div>
-                        <p id="zhe"><span>定价：￥{{x.yuan}}</span>&#x3000;&#x3000;<span>折扣：{{x.zhe}}折</span></p>
-                    </section>
-                </div>
-            </div>
-            <!--主页下部-->
-            <div id="main-bottom">
-                <div id="left">
-                    <aside>
-                        <div id="div-title">图书分类<span>更多>></span></div>
-                        <section id="classify" ng-repeat="x in data.classify">
-                            <p>[ {{x.title}} ]</p>
-                            <p><span>{{x.c1}}</span><span>{{x.c2}}</span></p>
-                            <p><span>{{x.c3}}</span><span>{{x.c4}}</span></p>
-                            <p><span>{{x.c5}}</span><span>{{x.c6}}</span></p>
-                            <p><span>{{x.c7}}</span><span>{{x.c8}}</span></p>
-                        </section>
-                        <p>查看更多分类>></p>
-                    </aside>
-                    <aside>
-                        <div id="div-title">名社特卖场<span>更多>></span></div>
-                        <div id="shushe">
-                            <img ng-repeat="x in data.shushe" ng-src="{{x.img}}">
-                        </div>
-                        <ul>
-                            <li ng-repeat="x in data.shushe1">· {{x.content}}</li>
-                        </ul>
-                    </aside>
-                    <aside>
-                        <div id="div-title">最新丛书</div>
-                        <ul>
-                            <li ng-repeat="x in data.newbook">· {{x.content}}</li>
-                        </ul>
-                    </aside>
-                </div>
-                <!--主页下部 分类图书-->
-                <div id="fenlei">
-                    <!--文学、社科、少儿-->
-                    <section ng-repeat="x in data.fenlei">
-                        <div id="div-title">{{x.title}}<span>更多>></span></div>
-                        <div id="books">
-                            <div id="content">
-                                <div><img ng-src="{{x.img}}"></div>
-                                <a href="#">{{x.name}}</a>
-                                <p>定价：￥{{x.price}}</p>
-                                <p>售价：<span>￥{{x.shou}}</span></p>
-                                <p>{{x.content}}</p>
-                            </div>
-                            <div id="content1">
-                                <div id="content" ng-repeat="y in x.books">
-                                    <div><img ng-src="{{y.img}}"></div>
-                                    <a href="#">{{y.name}}</a>
-                                    <p>定价：￥{{y.price}}</p>
-                                    <p>售价：<span>￥{{y.shou}}</span></p>
-                                </div>
-                            </div>
-                            <div id="ul">
-                                <ul ng-repeat="z in x.ul0">
-                                    <li>· {{z.content}}</li>
-                                    <img ng-src="{{z.img}}">
-                                </ul>
-                                <ul>
-                                    <li ng-repeat="r in x.ul">· {{r.content}}</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-                    <!--艺术、生活、文教-->
-                    <section id="fenlei1" ng-repeat="x in data.fenlei1">
-                        <div id="div-title">{{x.title}}<span>更多>></span></div>
-                        <div id="books">
-                            <div id="content1">
-                                <div id="content" ng-repeat="y in x.books">
-                                    <div><img ng-src="{{y.img}}"></div>
-                                    <a href="#">{{y.name}}</a>
-                                    <p>定价：￥{{y.price}}</p>
-                                    <p>售价：<span>￥{{y.shou}}</span></p>
-                                </div>
-                            </div>
-                            <div id="ul">
-                                <ul ng-repeat="z in x.ul0">
-                                    <li>· {{z.content}}</li>
-                                    <img ng-src="{{z.img}}">
-                                </ul>
-                                <ul>
-                                    <li ng-repeat="r in x.ul">· {{r.content}}</li>
-                                </ul>
-                            </div>
-                        </div>         
-                    </section>
-                </div>
-                <!--超低价专区-->
-                <div id="lower">
-                    <div>
-                        <div id="div-title">超低价专区<span>更多>></span></div>
-                        <div id="content1">
-                            <div id="content" ng-repeat="x in data.lower">
-                                <div><img ng-src="{{x.img}}"></div>
-                                <a href="#">{{x.name}}</a>
-                                <p>定价：￥{{x.price}}</p>
-                                <p>售价：<span>￥{{x.shou}}</span></p>
-                            </div>
-                        </div>
-                        <div id="lower1">
-                            <p ng-repeat="x in data.lower1">{{x.name}}<span>售价：￥{{x.price}}</span></p>
-                        </div>
-                    </div>
-                    <div id="right">
-                        <aside>
-                            <div id="div-title">典藏榜<span>更多>></span></div>
-                            <ul class="ranking">
-                                <li id="first-book" ng-repeat="x in data.dian">
-                                    <span>01</span>
-                                    <img ne-src="{{x.img}}">
-                                    <div>
-                                        <a href="#">{{x.name}}</a>
-                                        <p>作者：{{x.author}}</p>
-                                        <p>出版社：{{x.press}}</p>
-                                        <p>￥{{x.price}} <span>￥{{x.shou}}</span></p>
-                                    </div>
-                                </li>
-                                <li ng-repeat="x in data.diancang"><span>{{x.num}}</span> {{x.content}}</li>
-                            </ul>
-                        </aside>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <!--首页尾部-->
-        <footer>
-            <div>
-                <ul ng-repeat="x in data.footer">
-                    <h3>{{x.h3}}</h3>
-                    <li ng-repeat="y in x.li">· {{y.content}}</li>
-                </ul>
-            </div>
-            <div>
-                <img src="image/zatu/chengxin.jpg" alt="诚信网站">
-                <img src="image/zatu/danwei.gif" alt="中国电子商务诚信单位">
-                <p>
-                    <span>经营许可证编号：京ICP备09013606号-3</span>&#x3000;
-                    <span>京信市监发[2002]122号</span>&#x3000;
-                    海淀公安分局备案编号：1101083394
-                    <span>营业执照</span>&#x3000;
-                    <span>出版物经营许可证</span>
-                </p>
-            </div>
-        </footer>
-        <script src="scripts/carouse.js"></script>
-        
-    </body>
+        <div>
+            <img src="image/zatu/chengxin.jpg" alt="诚信网站">
+            <img src="image/zatu/danwei.gif" alt="中国电子商务诚信单位">
+            <p>
+                <span>经营许可证编号：京ICP备09013606号-3</span>&#x3000;
+                <span>京信市监发[2002]122号</span>&#x3000; 海淀公安分局备案编号：1101083394
+                <span>营业执照</span>&#x3000;
+                <span>出版物经营许可证</span>
+            </p>
+        </div>
+    </footer>
+    <script src="scripts/carouse.js"></script>
+</body>
 </html>

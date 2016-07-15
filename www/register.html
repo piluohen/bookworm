@@ -10,9 +10,9 @@
         <link rel="stylesheet" href="css/header.css">
         <link rel="stylesheet" href="css/sign.css">
         <script src="libs/angular.js"></script>
-        <script src="libs/angular-resource.js"></script>
         <script src="libs/jquery.min.js"></script>
         <script src="libs/jquery.cookie.js"></script>
+        <script src="scripts/register.js"></script>
         <script src="scripts/header.js"></script>
     </head>
     <body ng-app="myApp" ng-controller="RegCtrl">
@@ -60,17 +60,16 @@
                     <label for="code">请输入验证码：</label>
                     <input type="text" ng-model="reg.code" name="code" id="code" placeholder="请输入验证码">
                     <div>
-                        <label for=""></label>
+                        <label></label>
                         <img src="image/sign/code.jpg">&#x3000;看不清？<span> 换张图</span>
                     </div>
                 </div>
                 <div id="submit">
-                    <label for=""></label>
+                    <label></label>
                     <input type="submit" ng-disabled="form.$invalid" value="提 交 注 册">
                 </div>
             </form>
         </main>
         <footer ng-include="'views/footer.html'"></footer>
-        <script src="scripts/register.js"></script>
     </body>
 </html>

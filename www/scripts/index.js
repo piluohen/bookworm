@@ -3,26 +3,73 @@ m.controller('MainCtrl',['$scope','$http','$window',function($scope,$http,$windo
     $http.get('/data/index.json').success(function(res){
         $scope.data = res
     })
-    var username = $.cookie('username')
-    if(username){
-        $('#my>i').text('花径不曾缘客扫，蓬门今始为君开')
-        $('#sign').text(username).click(function(){
-            $window.location.href = 'user.html'
+    $(function(){
+        $('.flexslider').flexslider({
+            animation: "slide",
+            direction:"vertical",
+            slideshowSpeed: 1000,
+            pauseOnHover: true,
+            directionNav: false,
+            start: function(slider){}
         })
-        $('#register').text('退出登录').click(function(){
-            $http.get('/user/signout', null).success(function(res){
-                if(res.code == 'success'){
-                    $window.location.href = 'index.html'
-                }
-            })
-        })
-    }
-    else{
-        $('#sign').text('请登录').click(function(){
-            $window.location.href = 'sign.html'
-        })
-        $('#register').text('免费注册').click(function(){
-            $window.location.href = 'register.html'
-        })
-    }
+    })
 }])
+
+m.controller('Taobao',['$scope','$http',function($scope,$http){
+    $http.get('/data/taobao.json').success(function(res){
+        $scope.data = res
+    })
+    $('#main-middle>#div-title>a').click(function(){
+        $(this).addClass('clicked').siblings().removeClass('clicked')
+    })
+}])
+
+m.controller('Left', ['$scope', function ($scope) {
+    $(function () {
+        var scrnews = $("#carouse");
+
+        if (scrnews.children().length < 3) { return false; }
+
+        var newst = setInterval(scro, 3500);
+        $('#middle-carouse').hover(function () {
+            $(this).children('span').css('display', 'block')
+        }, function () {
+            $(this).children('span').css('display', 'none')
+        })
+        scrnews.hover(function () {
+            clearInterval(newst);
+        }, function () {
+            newst = setInterval(scro, 3500);
+        })
+        function scro() {
+            scrnews.animate({ 'left': '-518px' }, 1500, function () {
+                $(this).children("li:first").appendTo(this);
+                $(this).css("left", '0');
+            });
+        }
+        $('#carouse>li').hover(function () {
+            clearInterval(newst);
+        }, function () {
+            newst = setInterval(scro, 3500);
+        })
+        $('#carouse-prev').click(function () {
+            scrnews.children("li:first").appendTo(scrnews);
+        })
+        $('#carouse-next').click(function () {
+            scrnews.children("li:last").prependTo(scrnews);
+        })
+    })
+}])
+
+function showdiv(Id, divId1, divId2) {
+    for (i = 0; i < 5; i++) {
+        if (i == Id) {
+            $('#' + (divId1 + i) + '').addClass('now_list');
+            $('#' + (divId2 + i) + '').css('display', 'block')
+        }
+        else {
+            $('#' + (divId1 + i) + '').removeClass('now_list');
+            $('#' + (divId2 + i) + '').css('display', 'none')
+        }
+    }
+}

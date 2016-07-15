@@ -23,10 +23,9 @@ function buffer(ele, attr, target, fnCallback) {
 		}
 	}
 }
-
 var oOuter = document.getElementById("outer"),
     oInner = document.getElementById("inner"),
-    oBtn = document.getElementsByTagName("ul"),
+    oBtn = document.getElementById("btn"),
 	oDivT = document.getElementById("divT"),
 	oDivD = document.getElementById("divD"),
 	oLis = document.getElementById("outer").getElementsByTagName("li");
@@ -81,6 +80,7 @@ function autoDown() {
 	autoTimer = window.setTimeout(autoDown, 4000);
 }
 window.setTimeout(autoTop, 4000);
+//鼠标悬停	
 var oDivs = oInner.getElementsByTagName("img");
 for (var i = 0; i < oDivs.length; i++) {
 	oDivs.item(i).onmouseover = function () {
@@ -90,4 +90,3 @@ for (var i = 0; i < oDivs.length; i++) {
 		autoTimer = window.setTimeout(autoTop, 2000);
 	}
 }
-

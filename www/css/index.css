@@ -392,9 +392,30 @@ i.icon-caret-right{
     color: #666;
 }
 #main-middle>div:nth-of-type(1){
-    font-size: 16px;
-    padding: 20px 0 10px 20px;
+    font-size: 18px;
+    padding: 0;
     color: #fa7202;
+}
+#main-middle>#div-title{
+    border: 1px solid #c6c6c6;
+    padding: 0;
+    margin: 20px 0 10px 0;
+}
+#main-middle>#div-title>a{
+    color: #fa7202;
+    display: inline-block;
+    width: 80px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-right: 1px solid #c6c6c6;
+}
+#main-middle>#div-title>a.clicked{
+    color: white;
+    background-image: linear-gradient(to bottom,#ffb400,#fc9400,#fa7202);
+}
+#main-middle>#div-title>span{
+    line-height: 40px;
 }
 #taoshu{
     width: 100%;

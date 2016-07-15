@@ -1,0 +1,46 @@
+<div id="top">
+    <div id="left">
+        <aside>
+            <div id="div-title">批发业务介绍</div>
+            <ul>
+                <li id="first-book" ng-repeat="x in data.pifajieshao">
+                    <img ng-src="{{x.img}}" style="height:50px;margin-left:5px;">
+                    <div style="width:100px;">
+                        <a>{{x.content0}}</a><br>
+                        <a>{{x.content1}}</a>
+                    </div>
+                    <p>{{x.content2}}</p>
+                </li>
+            </ul>
+        </aside>
+        <aside>
+            <div id="div-title">批发频道说明</div>
+            <ul>
+                <p style="margin:10px 0;line-height:25px;" ng-repeat="x in data.pifashuoming">{{x.content}}</p>
+            </ul>
+        </aside>
+    </div>
+    <div id="middle">
+        <div id="middle-content" style="padding:0">
+            <div><span class="icon-sort-down"></span>&#x3000;强档推荐</div>
+            <section ng-repeat="y in data.pifatuijian">
+                <div id="content" ng-repeat="x in y.tuijian" style="width:160px;text-align:center;font-size:13px;">
+                    <div style="height:159px;">
+                        <img style="height:120px;" ng-src="{{x.img}}">
+                    </div>
+                    <a href="#">{{x.content}}</a>
+                    <p>定价：{{x.price}} 元</p>
+                    <p>现价：<span>{{x.shou}} 元</span></p>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div id="right">
+        <aside ng-repeat="x in data.pifagonggao">
+            <div id="div-title">{{x.title}}</div>
+            <ul>
+                <p style="margin:10px 0;line-height:28.9px;" ng-repeat="y in x.p">{{y.content}}</p>
+            </ul>
+        </aside>
+    </div>
+</div>
