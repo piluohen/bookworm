@@ -5,8 +5,13 @@ m.controller('SignCtrl', ['$scope','$http','$window', function($scope,$http,$win
     })
 
     $scope.save = function(){
-        $http.post('/user/signin', $scope.sign).then(function(res){
-            $window.location.href = 'index.html'
+        $http.post('/user/signin', $scope.sign).success(function(res){
+            if(res.code == 'success'){
+                $window.location.href = 'index.html'
+            }
+            else{
+                $('#password-error').html('&#x3000;密码或验证码错误')
+            }
         })
     }
 

@@ -3,16 +3,6 @@ m.controller('MainCtrl',['$scope','$http','$window',function($scope,$http,$windo
     $http.get('/data/index.json').success(function(res){
         $scope.data = res
     })
-    $(function(){
-        $('.flexslider').flexslider({
-            animation: "slide",
-            direction:"vertical",
-            slideshowSpeed: 1000,
-            pauseOnHover: true,
-            directionNav: false,
-            start: function(slider){}
-        })
-    })
 }])
 
 m.controller('Taobao',['$scope','$http',function($scope,$http){

@@ -46,14 +46,20 @@
     <!--向上轮播图-->
     <div id="outer">
         <div id="inner">
-            <img ng-repeat="x in data.inner" ng-src="{{x.img}}" alt="{{x.alt}}">
+            <img src="image/carouse/carouse-1.jpg">
+            <img src="image/carouse/carouse-2.jpg">
+            <img src="image/carouse/carouse-3.jpg">
+            <img src="image/carouse/carouse-4.jpg">
+            <img src="image/carouse/carouse-5.jpg">
         </div>
         <ul id="btn">
             <li class="current">暑期书单满99减50，精选图书限时直降</li>
-            <li ng-repeat="x in data.current">{{x.content}}</li>
+            <li>金马奖编剧《李樯作品集》4册，还原了电影中的所有删节部分</li>
+            <li>《精神家园丛书》全4册，对构筑精神家园进行思想探索</li>
+            <li>《堂吉诃德》上下卷，配有达利的三十八幅精美插图</li>
+            <li>奇葩养成课——好口才进阶书单</li>
         </ul>
     </div>
-
     <main ng-include="page"></main>
     <!--底部-->
     <footer>

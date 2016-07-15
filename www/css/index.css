@@ -152,6 +152,7 @@ li{
     line-height: 25px;
     background-color: rgba(255, 255, 255, 0.5);
     font-size: 14px;
+    padding: 0 5px;
 }
 #outer li.current{
     background: none;
@@ -421,10 +422,12 @@ i.icon-caret-right{
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 #taoshu>section{
     display: inline-block;
     width: 240px;
+    margin: 10px 0;
     padding: 10px;
     font-size: 15px;
     border: 1px solid orange;
@@ -460,6 +463,14 @@ i.icon-caret-right{
 }
 #zhe>span,#classify>p>span{
     color: #666;
+    font-size: 0.8rem; 
+}
+#zhe{
+    display: flex;
+    justify-content: space-between;
+}
+#taoshu>a{
+    font-size: 0.8rem;
 }
 #main-bottom{
     position: relative;

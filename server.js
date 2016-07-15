@@ -69,7 +69,7 @@ app.post('/user/signin', (req, res) => {
                 }
                 else{
                     var user = JSON.parse(data)
-                    if(user.password == req.body.password){
+                    if(user.password == req.body.password && user.code == req.body.code){
                         
                         res.cookie('username', req.body.username)
                         // 此处需要加密

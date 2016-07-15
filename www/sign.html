@@ -32,6 +32,7 @@
                 <div>
                     <label for="code">请输入验证码：</label>
                     <input type="text" name="code" id="code" ng-model="sign.code" placeholder="请输入验证码">
+                    <span id="password-error"></span>
                     <div>
                         <label for=""></label>
                         <img src="image/sign/code.jpg">&#x3000;看不清？<span> 换张图</span>
@@ -54,11 +55,9 @@
                     <div id="inner">
                         <ul>
                             <li ng-repeat="y in data.li">
-                                <!--<div ng-repeat="y in x.div">-->
-                                    <img ng-src="{{y.img}}" alt="{{y.name}}">
-                                    <a href="#">{{y.name}}</a>
-                                    <p>￥{{y.price}}&#x3000;<span>￥{{y.shou}}</span></p>
-                                <!--</div>-->
+                                <img ng-src="{{y.img}}" alt="{{y.name}}">
+                                <a href="#">{{y.name}}</a>
+                                <p>￥{{y.price}}&#x3000;<span>￥{{y.shou}}</span></p>
                             </li>
                         </ul> 
                     </div>
