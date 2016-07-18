@@ -1,24 +1,28 @@
-var m = angular.module('myApp',[])
-m.controller('UserCtrl',['$scope','$http','$window', function($scope,$http,$window){
-    $http.get('/data/index.json').success(function(res){
+var m = angular.module('myApp', [])
+m.controller('UserCtrl', ['$scope', '$http', '$window', function ($scope, $http, $window) {
+    $http.get('/data/user.json').success(function (res) {
         $scope.data = res
     })
-    $(function(){
-        // var i = 0
-        // var t = setInterval(move,2000)
-        // function move(){
-        //     if(i == 5){
-        //         i=0
-        //     }
-        //     var length = '-'+ (i + 1)*300 + 'px'
-        //     var length1 = -300*i +'px'
-        //     $('#inner').animate({'top':length},1000,function(){
-        //         $(this).children().first().appendTo(this)
-        //         $(this).css('top',length)
-        //         i++
-        //     })
-        // }
-        
-        func
-    })
+    var username = $.cookie('username')
+    if (username) {
+        $('#my>i').text('花径不曾缘客扫，蓬门今始为君开')
+        $('#sign').text(username).click(function () {
+            $window.location.href = 'user.html'
+        })
+        $('#register').text('退出登录').click(function () {
+            $http.get('/user/signout', null).success(function (res) {
+                if (res.code == 'success') {
+                    $window.location.href = 'index.html'
+                }
+            })
+        })
+    }
+    else {
+        $('#sign').text('请登录').click(function () {
+            $window.location.href = 'sign.html'
+        })
+        $('#register').text('免费注册').click(function () {
+            $window.location.href = 'register.html'
+        })
+    }
 }])

@@ -3,6 +3,9 @@ m.controller('MainCtrl',['$scope','$http','$window',function($scope,$http,$windo
     $http.get('/data/index.json').success(function(res){
         $scope.data = res
     })
+    $('#nav-title>span').click(function(){
+        $(this).addClass('checked').siblings().removeClass('checked')
+    })
 }])
 
 m.controller('Taobao',['$scope','$http',function($scope,$http){

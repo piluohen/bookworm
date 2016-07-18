@@ -1,0 +1,50 @@
+<div id="middle">
+    <section>
+        <img src="image/user/userm.jpg" alt="">
+        <div class="account">
+            <h2>欢迎，<span>皮落痕</span></h2>
+            <p>会员级别：1<span>再消费￥200元，就会成为二星级会员</span></p>
+            <p>账户余额：<i>￥0.00</i><span>账户积分：<i>0</i>（分）</span></p>
+            <div>
+                <span>交易提醒：</span>
+                <span>待支付订单(0)</span>
+                <span>待收货订单(0)</span>
+                <span>待评论订单(<i>0</i>)</span>
+            </div>
+        </div>
+    </section>
+    <div class="div-title">猜你可能会喜欢</div>
+    <section>
+        <div class="content" ng-repeat="x in data.userlike">
+            <!--<div class="img">-->
+            <img ng-src="{{x.img}}" alt="">
+            <!--</div>-->
+            <a>{{x.name}}</a>
+            <p><span>￥{{x.price}}</span>&#x3000;<i>￥{{x.shou}}</i></p>
+        </div>
+    </section>
+</div>
+<div id="right">
+    <section>
+        <div class="div-title">公告</div>
+        <ul>
+            <li>· 南方洪涝地区，订单配送延迟</li>
+            <li ng-repeat="x in data.news">· {{x.content}}</li>
+            <li id="weibo">· 关注我们的官方微博： <img src="image/zatu/sina.ico" /></li>
+        </ul>
+    </section>
+    <section>
+        <div class="div-title">热门图书</div>
+        <ul>
+            <li ng-repeat="x in data.books">{{x.content}}</li>
+        </ul>
+    </section>
+    <section>
+        <div class="div-title">意见薄</div>
+        <form>
+            <p>您的意见与建议是我们更好为您服务的基石！</p>
+            <textarea name="advise" id="advise"></textarea>
+            <input type="submit" value="提交">
+        </form>
+    </section>
+</div>

@@ -6,7 +6,7 @@ body{
     color: #666;
     font-family: '微软雅黑';
 }
-header,main,footer{
+header,main,footer,#banner{
     width: 1000px;
     margin: 0 auto;
 }
