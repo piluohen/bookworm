@@ -16,12 +16,13 @@ footer span{
 }
 header{
     height: 100px;
-    background-image: linear-gradient(to bottom, #ffffff,#f9f9f9,#f6f6f6);
+    /*background-image: linear-gradient(to bottom, #ffffff,#f9f9f9,#f6f6f6);*/
+    background-image: linear-gradient(to bottom, #ffffff,#ffffee,#ffffdd,#ffffcc);
     border-bottom: 2px solid orange;
 }
 #logo{
     float: left;
-    margin: 0px 10px;
+    margin: 0px 30px;
     height: 80px;
 }
 #logo>span{
@@ -37,6 +38,9 @@ header{
     justify-content: space-between;
     padding: 40px 10px;
     font-size: 14px;
+}
+#my{
+    width: 700px;
 }
 #my>i{
     font-style: normal;
@@ -54,7 +58,7 @@ footer>p>span:hover{
 footer{
     text-align: center;
     height: 100px;
-    background-image: linear-gradient(to top, #ffffff,#f9f9f9,#f6f6f6);
+    background-image: linear-gradient(to top, #ffffff,#ffffee,#ffffdd,#ffffcc);
     border-top: 2px solid orange;
 }
 footer>p{

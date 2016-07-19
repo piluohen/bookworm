@@ -1,94 +1,78 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="author" content="皮帅帅">
-        <link rel="shortcut icon" href="image/zatu/favicon.png" type="image/png">
-        <link rel="icon" href="image/zatu/favicon.png" type="image/png">
-        <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css">
-        <title>书呆子-个人中心</title>
-        <link rel="stylesheet" href="css/header.css">
-        <link rel="stylesheet" href="css/user.css">
-        <script src="libs/angular.js"></script>
-        <script src="libs/jquery.min.js"></script>
-        <script src="libs/jquery.cookie.js"></script>
-        <script src="scripts/user.js"></script>
-    </head>
-    <body ng-app="myApp" ng-controller="UserCtrl" ng-init="page='users/account.html'">
-        <header>
-            <section id="logo" onclick="location.href='index.html'">
-                <img src="image/zatu/logo.png" alt="书呆子logo"><span>书呆子</span>
-            </section>
-            <section id="my">
-                <i>舍南舍北皆春水，但见群鸥日日来&#x3000;</i>
-                <span id="sign">请登录</span>
-                <span id="register">免费注册</span>
-                <span>购物车(0)</span>
-                <span>书架</span>
-                <span>订单</span>
-                <span ng-click="page='users/account.html'">账户</span>
-                <span>书馨卡</span>
-                <span>优惠券</span>
-                <span>帮助</span>
-            </section>
-        </header>
-        <div id="banner">
-            <img src="image/user/banner.jpg">
-        </div>
-        <main>
-            <div id="aside">
-                <div class="aside-title"><span class="icon-sort-down">&nbsp;</span>我的账户</div>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="皮帅帅">
+    <link rel="shortcut icon" href="image/zatu/favicon.png" type="image/png">
+    <link rel="icon" href="image/zatu/favicon.png" type="image/png">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css">
+    <title>书呆子-个人中心</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/user.css">
+    <script src="libs/angular.js"></script>
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/jquery.cookie.js"></script>
+    <script src="scripts/user.js"></script>
+    <script src="scripts/header.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="UserCtrl">
+    <header ng-include="'views/header.html'"></header>
+    <div id="banner">
+        <img src="image/user/banner.jpg">
+    </div>
+    <main>
+        <div id="aside" ng-include="'views/aside.html'"></div>
+        <div id="main">
+            <div id="middle">
                 <section>
-                    <div class="div-title">订单管理</div>
-                    <ul>
-                        <li>订单跟踪</li>
-                        <li>公益订单</li>
-                        <li>收货地址簿</li>
-                        <li>退换货管理</li>
-                        <li>我的竞拍</li>
-                    </ul>
+                    <img src="image/user/userm.jpg" alt="">
+                    <div class="account">
+                        <h2>欢迎，<span id="name">皮落痕</span></h2>
+                        <p>会员级别：1<span>再消费￥200元，就会成为二星级会员</span></p>
+                        <p>账户余额：<i>￥0.00</i><span>账户积分：<i>0</i>（分）</span></p>
+                        <div>
+                            <span>交易提醒：</span>
+                            <span>待支付订单(0)</span>
+                            <span>待收货订单(0)</span>
+                            <span>待评论订单(<i>0</i>)</span>
+                        </div>
+                    </div>
                 </section>
+                <div class="div-title">猜你可能会喜欢</div>
                 <section>
-                    <div class="div-title">账户管理</div>
-                    <ul>
-                        <li>账户余额</li>
-                        <li>账户安全</li>
-                        <li>书馨卡</li>
-                        <li>我的优惠券</li>
-                        <li>我的邀请</li>
-                        <li>我的抽奖</li>
-                        <li>退款申请</li>
-                        <li>退款清单</li>
-                    </ul>
+                    <div class="content" ng-repeat="x in data.userlike">
+                        <img ng-src="{{x.img}}" alt="">
+                        <a>{{x.name}}</a>
+                        <p><span>￥{{x.price}}</span>&#x3000;<i>￥{{x.shou}}</i></p>
+                    </div>
                 </section>
-                <section>
-                    <div class="div-title">我的积分</div>
-                    <ul>
-                        <li>积分明细</li>
-                        <li>积分换券</li>
-                    </ul>
-                </section>
-                <section>
-                    <div class="div-title">关注商品</div>
-                    <ul>
-                        <li>我的收藏夹</li>
-                        <li>写书评</li>
-                        <li>我的书评</li>
-                    </ul>
-                </section>
-                <section>
-                    <div class="div-title">个人信息</div>
-                    <ul>
-                        <li>站内短信</li>
-                        <li>编辑个人档案</li>
-                        <li>修改密码</li>
-                    </ul>
-                </section>
-                <div class="div-title">退出登录</div>
             </div>
-
-            <div id="main" ng-include="page"></div>
-        </main>
-        <footer ng-include="'views/footer.html'"></footer>
-    </body>
+            <div id="right">
+                <section>
+                    <div class="div-title">公告</div>
+                    <ul>
+                        <li>· 南方洪涝地区，订单配送延迟</li>
+                        <li ng-repeat="x in data.news">· {{x.content}}</li>
+                        <li id="weibo">· 关注我们的官方微博： <img src="image/zatu/sina.ico" /></li>
+                    </ul>
+                </section>
+                <section>
+                    <div class="div-title">热门图书</div>
+                    <ul>
+                        <li ng-repeat="x in data.books">{{x.content}}</li>
+                    </ul>
+                </section>
+                <section>
+                    <div class="div-title">意见薄</div>
+                    <form>
+                        <p>您的意见与建议是我们更好为您服务的基石！</p>
+                        <textarea name="advise" id="advise"></textarea>
+                        <input type="submit" value="提交">
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer ng-include="'views/footer.html'"></footer>
+</body>
 </html>

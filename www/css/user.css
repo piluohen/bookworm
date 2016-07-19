@@ -23,12 +23,17 @@ main i{
     display: flex;
     justify-content: space-between;
 }
+#main>section>p{
+    margin: 0;
+    font-size: 14px;
+    display: block;
+}
 .aside-title, .div-title{
     height: 40px;
     padding: 0px 10px;
     line-height: 40px;
     font-size: 16px;
-    background-image: linear-gradient(to bottom,#f9f9f9,#f6f6f6,#f3f3f3);
+    background-image: linear-gradient(to bottom,#ffee99,#ffdd99,#ffcc66);
     color: #ff6600;
     text-align: center;
 }
@@ -38,7 +43,7 @@ main i{
 }
 .div-title{
     background-image: none;
-    background-color: #ffffcc;
+    background-color: #ffffaa;
 }
 #aside>div.div-title{
     cursor: pointer;
@@ -46,6 +51,7 @@ main i{
 ul{
     margin: 0;
     padding: 10px 20px;
+    background-color: #ffffee
 }
 li{
     list-style: none;
@@ -74,22 +80,24 @@ li:hover,
 #right .div-title{
     border-bottom: 1px solid #ffcc66;
 }
-#right form{
-    padding: 0 10px;
+form{
+    padding: 10px;
+    background-color: #ffffee;
 }
-#right form>p{
+form>p{
     line-height: 30px;
+    margin: 0;
 }
-#right form>textarea,
-#right form>input{
-    width: 100%;
+textarea,
+input{
+    width: 178px;
     height: 100px;
     resize: none;
     padding: 5px;
     border: 1px solid #ffcc66;
     border-radius: 5px;
 }
-#right form>input{
+input[type=submit]{
     margin: 10px 0;
     height: 30px;
     font-size: 14px;
@@ -98,17 +106,18 @@ li:hover,
 }
 #weibo>img{
     animation: imgbig 2s linear infinite;
-    vertical-align: middle;
+    position: relative;
+    top: 2px;
 }
 @keyframes imgbig{
     0%{
-        height: 16px;
+        width: 16px;
     }
     60%{
-        height: 20px;
+        width: 20px;
     }
     100%{
-        height: 16px;
+        width: 16px;
     }
 }
 #middle>section{
@@ -180,4 +189,132 @@ li:hover,
 }
 .content>p>span:first-child{
     text-decoration-line: line-through;
+}
+#indent>div>span{
+    display: inline-block;
+    height: 40px;
+    width: 120px;
+    text-align: center;
+    line-height: 40px;
+}
+#indent>div:nth-of-type(1)>span{
+    font-size: 15px;
+    margin-top: 20px;
+    margin-right: 3px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-image: linear-gradient(to bottom,#ffff88,#ffcc66,#ffcc00);
+    border: 1px solid #ffcc66;
+}
+#indent>div:nth-of-type(2){
+    width: 738px;
+}
+#indent>div:nth-of-type(2)>span{
+    background-color: #ffffcc;
+    border-right: 1px solid #ffcc00;
+    width: 122.5px;
+}
+#indent>div:nth-of-type(2){
+    border: 1px solid #ffcc66;
+}
+#indent>div:nth-of-type(2)>span:last-child{
+    border-right: none;
+}
+#indent>input{
+    display: block;
+    margin: 20px auto;
+}
+#bookrack,
+#indent{
+    background-color: #ffffee;
+    width: 100%;
+}
+#bookrack>p{
+    padding-left: 10px;
+}
+#collect{
+    padding: 10px 0;
+}
+#collect select{
+    margin-right: 10px;
+}
+#collect input{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 5px;
+    margin: 0;
+}
+#collect>div:nth-of-type(1){
+    padding: 0 10px;
+    height: 30px;
+    display: inline-block;
+}
+#collect>div:nth-of-type(2){
+    float: right;
+    height: 30px;
+    padding-top: 5px;
+}
+#collect>div:nth-of-type(2)>span{
+    border: 1px solid #ffcc66;
+    margin-right: 10px;
+}
+#collect>div:nth-of-type(3){
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ffcc66;
+    margin: 10px 0;
+}
+#collect>div:nth-of-type(3)>span{
+    display: inline-block;
+    padding: 6px 28px 4px 28px;
+    border-right: 1px solid #ffcc66;
+}
+#collect>div:nth-of-type(3)>span:first-child>input{
+    position: relative;
+    top: 2px;
+}
+#collect>div:nth-of-type(3)>span:last-child{
+    border-right: none;
+}
+#collect>div:last-child{
+    padding: 0 10px;
+}
+#collect>div:last-child>span{
+    border: 1px solid #ffcc66;
+    margin-left: 10px;
+    padding: 3px 7px;
+}
+.help{
+    margin-bottom: 20px;
+}
+.help:last-child{
+    margin-bottom: 0;
+}
+.help>div.div-title{
+    border: 1px solid #ffcc66;
+}
+.help>ul{
+    border: 1px solid #ffcc66;
+    margin-top: 10px;
+    padding: 10px;
+}
+.help>ul>li{
+    text-align: left;
+}
+.help-ul>li:nth-of-type(2n+1),
+.help-ul>li:last-child{
+    color: orange;
+}
+.help-ul>li:nth-of-type(2){
+    font-size: 0.8rem;
+}
+li>span{
+    color: #ff6600;
+    position: relative;
+    top: -1px;
+}
+.help:first-child>ul>li:nth-of-type(2){
+    font-weight: bold;
 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="皮帅帅">
+    <link rel="shortcut icon" href="image/zatu/favicon.png" type="image/png">
+    <link rel="icon" href="image/zatu/favicon.png" type="image/png">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css">
+    <title>书呆子-我的订单</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/user.css">
+    <script src="libs/angular.js"></script>
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/jquery.cookie.js"></script>
+    <script src="scripts/user.js"></script>
+    <script src="scripts/header.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="UserCtrl">
+    <header ng-include="'views/header.html'"></header>
+    <div id="banner">
+        <img src="image/user/banner.jpg">
+    </div>
+    <main>
+        <div id="aside" style="border:none;">
+            <section class="help">
+                <div class="div-title"><span class="icon-plus">&nbsp;</span>帮助中心</div>
+                <ul>
+                    <li ng-repeat="x in data.help">· {{x.content}}</li>
+                </ul>
+            </section>
+            <section class="help">
+                <div class="div-title"><span class="icon-plus">&nbsp;</span>客服中心</div>
+                <ul class="help-ul">
+                    <li ng-repeat="x in data.help1">{{x.content}}</li>
+                    <li id="weibo">站内短信 <img src="image/user/xin.gif"></li>
+                    <li>我的账户</li>
+                </ul>
+            </section>
+        </div>
+        <div id="main">
+            <section id="bookrack">
+                <div class="div-title">为什么选择书呆子？</div>
+                <ul>
+                    <li style="text-align:left" ng-repeat="x in data.help2">
+                        <span class="icon-angle-right"></span> {{x.content}}
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <footer ng-include="'views/footer.html'"></footer>
+</body>
+</html>

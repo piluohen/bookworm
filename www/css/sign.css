@@ -1,15 +1,16 @@
 form{
     width: 600px;
     margin: 25px auto;
-    border: 1px solid #e6e6e6;
+    border: 1px solid #ffcc66;
     font-size: 15px;
+    background-color: #ffffee;
 }
 h2{
     font-size: 21px;
     font-weight: normal;
     color: #fc9400;
-    border-bottom: 1px solid #e6e6e6;
-    background-image: linear-gradient(to bottom, #ffffff,#f9f9f9,#f6f6f6);
+    border-bottom: 1px solid #ffcc66;
+    background-image: linear-gradient(to bottom,#ffffee,#ffffcc,#ffdd99);
     margin: 0;
     padding: 5px 20px;
 }
@@ -26,7 +27,7 @@ input{
     width: 240px;
     padding: 0 5px;
     border: none;
-    border: 1px solid #c6c6c6;
+    border: 1px solid #ffdd99;
     border-radius: 5px;
 }
 input[type=submit]{
@@ -52,7 +53,7 @@ form>div>i{
 form>div>div>img{
     width: 240px;
     height: 50px;
-    border: 1px solid #c6c6c6;
+    border: 1px solid #ffdd99;
     vertical-align: middle;
     border-radius: 5px;
 }
@@ -61,7 +62,7 @@ form>div>div>img{
     font-size: 16px;
 }
 #weibo{
-    border-top: 1px dotted #c6c6c6;
+    border-top: 1px dotted #ffcc66;
     margin: 20px 20px 0 20px;
     text-align: center;
     padding: 15px 0;
@@ -73,8 +74,9 @@ form>div>div>img{
     position: relative;
     width: 100%;
     font-size: 13px;
-    border: 1px solid #e6e6e6;
+    border: 1px solid #ffdd99;
     margin: 25px 0;
+    background-color: #ffffee;
 }
 #recom>h2{
     font-size: 16px;
@@ -108,10 +110,38 @@ ul>li{
     display: inline-block;
     width: 160px;
     text-align: center;
+    background-color: white;
 }
 ul>li img{
     display: block;
     margin: 20px auto;
+    position: relative;
+}
+ul>li img:hover{
+    animation: top 0.3s linear;
+}
+@keyframes top{
+    0%{
+        top: 0px;
+    }
+    20%{
+        top: -10px;
+    }
+    40%{
+        top:-15px;
+    }
+    70%{
+        top: 7px;
+    }
+    80%{
+        top: 0px;
+    }
+    90%{
+        top: 5px;
+    }
+    100%{
+        top: 0px;
+    }
 }
 #outer a{
     display: inline-block;
@@ -134,11 +164,11 @@ ul>li img{
 }
 #left{
     left: 0;
-    background-image: linear-gradient(to left, #f9f9f9,#f6f6f6,#e6e6e6);
+    background-image: linear-gradient(to left, #ffffdd,#ffffcc,#ffffaa);
 }
 #right{
     right: 0;
-    background-image: linear-gradient(to right, #f9f9f9,#f6f6f6,#e6e6e6);
+    background-image: linear-gradient(to right, #ffffdd,#ffffcc,#ffffaa);
 }
 label[for=male],
 label[for=female]{
@@ -167,6 +197,7 @@ input[type=radio]{
 input[type=submit]:disabled{
     color: #666;
     background-image: linear-gradient(to right, #f9f9f9,#f6f6f6,#e6e6e6);
+    border: 1px solid #d6d6d6;
 }
 #password-error{
     color: red;

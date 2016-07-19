@@ -1,0 +1,8 @@
+<div class="aside-title"><span class="icon-sort-down">&nbsp;</span>我的账户</div>
+<section ng-repeat="x in data.list">
+    <div class="div-title">{{x.title}}</div>
+    <ul>
+        <li ng-repeat="y in x.li">{{y.content}}</li>
+    </ul>
+</section>
+<div class="div-title">退出登录</div>

@@ -55,7 +55,9 @@
                     <div id="inner">
                         <ul>
                             <li ng-repeat="y in data.li">
-                                <img ng-src="{{y.img}}" alt="{{y.name}}">
+                                <div>
+                                    <img ng-src="{{y.img}}" alt="{{y.name}}">
+                                </div>
                                 <a href="#">{{y.name}}</a>
                                 <p>￥{{y.price}}&#x3000;<span>￥{{y.shou}}</span></p>
                             </li>

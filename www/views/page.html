@@ -216,7 +216,7 @@
                 <ul class="ranking">
                     <li id="first-book" ng-repeat="x in data.dian">
                         <span>01</span>
-                        <img ne-src="{{x.img}}">
+                        <img ng-src="{{x.img}}">
                         <div>
                             <a href="#">{{x.name}}</a>
                             <p>作者：{{x.author}}</p>
@@ -224,7 +224,7 @@
                             <p>￥{{x.price}} <span>￥{{x.shou}}</span></p>
                         </div>
                     </li>
-                    <li ng-repeat="x in data.diancang"><span>{{x.num}}</span> {{x.content}}</li>
+                    <li style="height:26.2px;" ng-repeat="x in data.diancang"><span>{{x.num}}</span> {{x.content}}</li>
                 </ul>
             </aside>
         </div>

@@ -1,4 +1,37 @@
 {
+    "list":[
+        {"title":"订单管理","li":[
+            {"content":"订单跟踪"},
+            {"content":"公益订单"},
+            {"content":"收货地址簿"},
+            {"content":"退换货管理"},
+            {"content":"我的竞拍"}
+        ]},
+        {"title":"账户管理","li":[
+            {"content":"帐户余额"},
+            {"content":"帐户安全"},
+            {"content":"书馨卡"},
+            {"content":"我的优惠券"},
+            {"content":"我的邀请"},
+            {"content":"我的抽奖"},
+            {"content":"退款申请"},
+            {"content":"退款清单"}
+        ]},
+        {"title":"我的积分","li":[
+            {"content":"积分明细"},
+            {"content":"积分换券"}
+        ]},
+        {"title":"关注商品","li":[
+            {"content":"我的收藏夹"},
+            {"content":"写书评"},
+            {"content":"我的书评"}
+        ]},
+        {"title":"个人信息","li":[
+            {"content":"站内短信"},
+            {"content":"编辑个人档案"},
+            {"content":"修改密码"}
+        ]}
+    ],
     "news":[
         {"content":"中国图书网退货地址变更通知"},
         {"content":"诚聘设计师、采购、库工等"}
@@ -14,5 +47,115 @@
         {"img":"../image/user/user2.jpg","name":"喜乐与我","price":"14.8","shou":"9.6"},
         {"img":"../image/user/user3.jpg","name":"浪漫鼠德佩罗","price":"19.8","shou":"9.7"},
         {"img":"../image/user/user4.jpg","name":"小巫婆求仙记-国际大奖小说.爱藏本","price":"14.0","shou":"6.9"}
+    ],
+    "indent":[
+        {"span":[
+            {"span":"最近一个月订单"},
+            {"span":"查看所有订单"},
+            {"span":"查看已取消订单"},
+            {"span":"图书查询"}
+        ]},
+        {"span":[
+            {"span":"订单号"},
+            {"span":"金额(元)"},
+            {"span":"订购日期"},
+            {"span":"付款方式"},
+            {"span":"订单状态"},
+            {"span":"操作"}
+        ]}
+    ],
+    "formspan":[
+        {"content":"商品名称"},
+        {"content":"原价"},
+        {"content":"售价"},
+        {"content":"节省了"},
+        {"content":"存入时间"},
+        {"content":"是否购买"},
+        {"content":"处理"}
+    ],
+    "formcheck":[
+        {"content":"放入购物车"},
+        {"content":"删除选中商品"},
+        {"content":"取消购买标记"}
+    ],
+    "select":[
+        {"id":"select0","option":[
+            {"val":"收藏时间"},
+            {"val":"折扣"},
+            {"val":"出版社"},
+            {"val":"出版时间"},
+            {"val":"售价"},
+            {"val":"分类"},
+            {"val":"书名"}
+        ]},
+        {"id":"select1","option":[
+            {"val":"降序"},
+            {"val":"升序"}
+        ]}
+    ],
+    "select1":[
+        {"val":"全部"},
+        {"val":"有货"},
+        {"val":"缺货"}
+    ],
+    "help":[
+        {"content":"本站简介"},
+        {"content":"我们的优势"},
+        {"content":"订购的问题"},
+        {"content":"支付问题"},
+        {"content":"配送问题"},
+        {"content":"售后问题"},
+        {"content":"积分问题"},
+        {"content":"关于特价书的常见问题"},
+        {"content":"购物演示"},
+        {"content":"团购服务"},
+        {"content":"批发说明"}
+    ],
+    "help1":[
+        {"content":"客服电话"},
+        {"content":"010-83628317 (8:30—21:00)"},
+        {"content":"客服邮箱"},
+        {"content":"service@bookschina.com"}
+    ],
+    "help2":[
+        {"content":"已创建了16年，业内资深网上书店"},
+        {"content":"85万种现货图书，品种齐全"},
+        {"content":"660城市送货上门"},
+        {"content":"北京地区80所高校和科研院所满29元免运费"},
+        {"content":"礼品图书1-5折"},
+        {"content":"“2007年消费者最喜爱的网站top100”之一"},
+        {"content":"2006年度中国电子商务诚信先进单位"}
+    ],
+    "shop":[
+        {"li":[
+            {"content":"幕后政治家约瑟夫富歇传 (包邮）","price":"9.8"},
+            {"content":"消散的现代性-全球化的文化维度","price":"10.3"},
+            {"content":"完美保养-完美女人养成记","price":"9.5"},
+            {"content":"狄更斯-远大前程","price":"12.8"}
+        ]},
+        {"li":[
+            {"content":"捕捉儿童敏感期 （包邮）","price":"8.7"},
+            {"content":"阿加莎克里斯蒂-悬崖山庄奇案","price":"7.4"},
+            {"content":"王朝闻自选集-从心上来","price":"7.0"},
+            {"content":"越野行走-简单易学 快乐健身","price":"3.5"}
+        ]}
+    ],
+    "shop1":[
+        {"title":"29","div":[
+            {"img":"../image/shujia/shujia2.jpg","name":"699美金飞遍新东欧（特惠品...","author":"朱兆瑞 ","price":"29.9","zhe":"5.9"},
+            {"img":"../image/shujia/shujia3.jpg","name":"遇见幸福.遇见爱（特惠品）","author":"兰心","price":"28.0","zhe":"3.3"}
+        ]},
+        {"title":"39","div":[
+            {"img":"../image/shujia/shujia4.jpg","name":"唐宋诗风流别史（特惠品）","author":"阮忠","price":"28.0","zhe":"6.9"},
+            {"img":"../image/shujia/shujia5.jpg","name":"百年中国文学总系：1993-世...","author":"张志忠","price":"18.8","zhe":"2.9"}
+        ]},
+        {"title":"59","div":[
+            {"img":"../image/shujia/shujia6.jpg","name":"商周艺术（特惠品）","author":"谢崇安","price":"28.0","zhe":"6.5"},
+            {"img":"../image/shujia/shujia7.jpg","name":"阿里与妮诺（特惠品）","author":"[德]库尔班·赛义德","price":"22.0","zhe":"4.5"}
+        ]},
+        {"title":"79","div":[
+            {"img":"../image/shujia/shujia8.jpg","name":"每日论语（特惠品）","author":"曾琦云 评注","price":"34.0","zhe":"8.9"},
+            {"img":"../image/shujia/shujia9.jpg","name":"汪荣祖人物书系--康有为论（...","author":"汪荣祖 ","price":"22.0","zhe":"5.8"}
+        ]}
     ]
 }

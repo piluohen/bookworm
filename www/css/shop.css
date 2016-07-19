@@ -1,0 +1,131 @@
+main{
+    margin: 20px auto;
+    font-size: 14px;
+}
+main>section{
+    border: 1px solid #ffcc66;
+    margin: 20px 0;
+}
+main i{
+    color: #ff9900;
+    font-style: normal;
+}
+.div-title{
+    height: 40px;
+    padding: 0px 20px;
+    line-height: 40px;
+    font-size: 16px;
+    background-image: linear-gradient(to bottom,#ffffee,#ffffcc,#ffdd99);
+    color: #ff6600;
+}
+li{
+    list-style: none;
+    height: 25px;
+    line-height: 25px;
+}
+.tuijian{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    background-color: #ffffee;
+}
+.tuijian>img{
+    height: 80px;
+    margin: 20px;
+}
+.tuijian>ul{
+    display: inline-block;
+    width: 380px;
+    padding: 0;
+}
+.tuijian li{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.tuijian li>span:first-child{
+    width: 250px
+}
+.tuijian li>i{
+    width: 60px;
+}
+.tuijian li>span:last-child{
+    padding: 0 5px;
+    border: 1px solid #ffdd99;
+    background-color: #ffeecc;
+    height: 20px;
+    line-height: 16px;
+    position: relative;
+    top: 2px;
+}
+main>section:nth-of-type(2){
+    border: 1px solid #ffdd99;
+    background-color: #ffffee;
+    height: 150px;
+    padding: 10px 20px;
+}
+main>section:nth-of-type(2)>p{
+    margin: 6px 20px;
+}
+#tehui{
+    border: none;
+}
+#tehui>section{
+    height: 40px;
+    height: 40px;
+    padding: 0px 20px;
+    line-height: 40px;
+    font-size: 14px;
+    background-image: linear-gradient(to bottom,#ffee99,#ffdd99,#ffcc66);
+    border: 1px solid #ff9966;
+}
+#tehui>section>span{
+    font-size: 16px;
+    color: #ff6600;
+    margin-right: 30px;
+}
+#tehui>div{
+    border: 1px solid #ffcc66;
+    margin-top: 10px;
+}
+#tehui .div-title{
+    color: #666;
+}
+#tehui .div-title>span{
+    color: #ff6600;
+}
+#tehui>div>section{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffee;
+}
+#tesec{
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+}
+#tesec>div:first-child{
+    display: flex;
+    justify-content: space-between;
+    width: 260px;
+}
+#tesec>div:first-child>img{
+    height: 80px;
+}
+#tesec p{
+    margin: 0 0 8px 0
+}
+#tesec p:first-child:hover{
+    color: orange;
+    cursor: pointer;
+}
+#tesec>div:last-child{
+    padding-top: 13px;
+}
+#tesec span{
+    position: relative;
+    right: 50px;
+    bottom: 28px;
+    font-size: 16px;
+}

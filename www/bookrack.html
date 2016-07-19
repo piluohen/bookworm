@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="皮帅帅">
+    <link rel="shortcut icon" href="image/zatu/favicon.png" type="image/png">
+    <link rel="icon" href="image/zatu/favicon.png" type="image/png">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css">
+    <title>书呆子-我的订单</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/user.css">
+    <script src="libs/angular.js"></script>
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/jquery.cookie.js"></script>
+    <script src="scripts/user.js"></script>
+    <script src="scripts/header.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="UserCtrl">
+    <header ng-include="'views/header.html'"></header>
+    <div id="banner">
+        <img src="image/user/banner.jpg">
+    </div>
+    <main>
+        <div id="aside" ng-include="'views/aside.html'"></div>
+        <div id="main">
+            <section id="bookrack">
+                <p><i id="name"></i>，您的收藏夹暂无任何商品</p>
+                <form id="collect">
+                    <div>
+                        <label for="">排序方式：</label>
+                        <select name="{{x.id}}" id="{{x.id}}" ng-repeat="x in data.select">
+                            <option value="{{y.val}}" ng-repeat="y in x.option">{{y.val}}</option>
+                        </select>
+                        <input type="radio" id="all" value="all" name="price" checked>
+                        <label for="all">全部</label>
+                        <input type="radio" id="right-price" value="right" name="price">
+                        <label for="right-price">正价</label>
+                        <input type="radio" id="left-price" value="left" name="price">
+                        <label for="left-price">特价</label>
+                        <select name="select2" id="select2">
+                            <option ng-repeat="x in data.select1" value="{{x.val}}">{{x.val}}</option>
+                        </select>
+                    </div>
+                    <div>
+                        每页显示： <span>20条</span><span>50条</span><span>全部</span>
+                    </div>
+                    <div>
+                        <span><input type="checkbox"></span>
+                        <span ng-repeat="x in data.formspan">{{x.content}}</span>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="checkout">
+                        <label for="checkout">全选/取消</label>
+                        <span ng-repeat="x in data.formcheck">{{x.content}}</span>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer ng-include="'views/footer.html'"></footer>
+</body>
+</html>
