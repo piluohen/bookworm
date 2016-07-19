@@ -176,16 +176,37 @@ label[for=female]{
     text-align: left;
 }
 input[type=radio]{
-    width: 20px;
+    width: 22px;
     height: 32px;
     margin-right: -3px;
+    display: none;
+}
+input[type=radio]+label{
+    display: inline-block;
+    width: 60px;
+    margin: 5px auto;
+    height: 40px;
+    line-height: 20px;
+    padding: 10px;
+    background-image: url(../image/zatu/unselect.png);
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: left center;
+    padding-left: 30px;
+    font-size: 0.9rem;
+}
+input[type=radio]:checked+label{
+    background-image: url(../image/zatu/select.png);
 }
 #sex{
     height: 37.5px;
 }
-#sex>label{
+#sex label{
     position: relative;
     top: -10px;
+}
+#sex>div{
+    display: inline-block;
 }
 .icon-ok-sign{
     color: green

@@ -51,10 +51,12 @@
                 </div>
                 <div id="sex">
                     <label for="#">性别：</label>
-                    <input type="radio" ng-model="reg.isMale" id="male" value="male" name="isMale">
-                    <label for="male">男</label>
-                    <input type="radio" ng-model="reg.isMale" id="female" value="female" name="isMale">
-                    <label for="female">女</label>
+                    <div>
+                        <input type="radio" ng-model="reg.isMale" id="male" value="male" name="isMale" ng-checked="true">
+                        <label for="male">男</label>
+                        <input type="radio" ng-model="reg.isMale" id="female" value="female" name="isMale">
+                        <label for="female">女</label>
+                    </div>
                 </div>
                 <div>
                     <label for="code">请输入验证码：</label>
