@@ -16,7 +16,6 @@ footer span{
 }
 header{
     height: 100px;
-    /*background-image: linear-gradient(to bottom, #ffffff,#f9f9f9,#f6f6f6);*/
     background-image: linear-gradient(to bottom, #ffffff,#ffffee,#ffffdd,#ffffcc);
     border-bottom: 2px solid orange;
 }
