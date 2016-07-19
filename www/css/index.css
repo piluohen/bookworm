@@ -112,8 +112,13 @@ nav>div:last-child>span{
     padding: 0 10px;
     border-right: 1px solid #ffcc66;
 }
-#title>span:last-child{
+#title>span:nth-last-of-type(1){
     border-right: none;
+}
+#title>img{
+    position: relative;
+    top: -6px;
+    right: 13px;
 }
 #outer{
     height: 300px;
@@ -378,7 +383,7 @@ li#first-book{
     transition: transform 0.5s linear;
 }
 #first-book>img:hover{
-    transform: scale(1.2);
+    transform: scale(1.15);
 }
 #first-book>div{
     width: 130px;

@@ -10,12 +10,12 @@ m.controller('RegCtrl', ['$scope', '$http', '$window', function ($scope, $http, 
             $http.post('/user/register', $scope.reg).then(function (res) {
                 console.log(res.data.message)
                 if (res.data.code == 'registered') {
-                    $('#username>i').css('display', 'none')
-                    $('<i></i>').addClass('icon-remove-sign').text(' ' + res.data.message).appendTo('#username')
-                    $('#username>input').on('input', function () {
-                        $('#username>i').css('display', 'inline')
-                        if ($('#username>i').text() != '') {
-                            $('#username>i:last').remove()
+                    $('#usernames>i').css('display', 'none')
+                    $('<i></i>').addClass('icon-remove-sign').text(' ' + res.data.message).appendTo('#usernames')
+                    $('#usernames>input').on('input', function () {
+                        $('#usernames>i').css('display', 'inline')
+                        if ($('#usernames>i').text() != '') {
+                            $('#usernames>i:last').remove()
                         }
                     })
                 } else {

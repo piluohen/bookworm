@@ -20,7 +20,7 @@
         <main>
             <form style="margin:100px auto;" name="form" ng-submit="save()">
                 <h2>新用户注册</h2>
-                <div id="username">
+                <div id="usernames">
                     <label for="username">用户名：</label>
                     <input type="text" ng-model="reg.username" name="username" id="username" ng-pattern="'[0-9a-zA-z]{6,16}'" required autofocus placeholder="请输入用户名">
                     <i class="icon-ok-sign" ng-show="form.username.$valid && form.username.$dirty"></i>
@@ -61,7 +61,7 @@
                 <div>
                     <label for="code">请输入验证码：</label>
                     <input type="text" ng-model="reg.code" name="code" id="code" placeholder="请输入验证码">
-                    <div>
+                    <div class="code">
                         <label></label>
                         <img src="image/sign/code.jpg">&#x3000;看不清？<span> 换张图</span>
                     </div>
