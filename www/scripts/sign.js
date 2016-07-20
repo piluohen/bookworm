@@ -3,7 +3,7 @@ m.controller('SignCtrl', ['$scope','$http','$window', function($scope,$http,$win
     $http.get('/data/sign.json').success(function(res){
         $scope.data = res
     })
-
+    
     $scope.save = function(){
         $http.post('/user/signin', $scope.sign).success(function(res){
             if(res.code == 'success'){

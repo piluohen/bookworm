@@ -3,11 +3,31 @@
 </section>
 <section id="my" ng-controller="Header">
     <i>舍南舍北皆春水，但见群鸥日日来&#x3000;</i>
-    <span id="sign">请登录</span>
-    <span id="register">免费注册</span>
-    <span id="shopbar">购物车(0)</span>
-    <span id="bookracks">书架</span>
-    <span id="indents">订单</span>
-    <span id="users">账户</span>
-    <span onclick="location.href='help.html'">帮助</span>
+    <span class="sign">请登录</span>
+    <span class="register">免费注册</span>
+    <span class="shopbar">购物车(0)</span>
+    <span class="bookracks">
+        <span>书架</span>
+        <ol class="bookracks1">
+            <li ng-repeat="x in data.bookracks">{{x.content}}</li>
+        </ol>
+    </span>
+    <span class="indents">
+        <span>订单</span>
+        <ol class="indents1">
+            <li ng-repeat="x in data.indents">{{x.content}}</li>
+        </ol>
+    </span>
+    <span class="users">
+        <span>用户</span>
+        <ol class="users1">
+            <li ng-repeat="x in data.users">{{x.content}}</li>
+        </ol>
+    </span>
+    <span class="helps">
+        <span>帮助</span>
+        <ol class="helps1">
+            <li ng-repeat="x in data.helps">{{x.content}}</li>
+        </ol>
+    </span>
 </section>

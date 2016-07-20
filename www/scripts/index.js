@@ -3,8 +3,20 @@ m.controller('MainCtrl',['$scope','$http','$window',function($scope,$http,$windo
     $http.get('/data/index.json').success(function(res){
         $scope.data = res
     })
+    $http.get('/data/sign.json').success(function(res){
+        $scope.data1 = res
+    })
     $('#nav-title>span').click(function(){
         $(this).addClass('checked').siblings().removeClass('checked')
+    })
+    $(function(){
+        $(window).scroll(function(){
+            if($(this).scrollTop()>100){
+                $('#title').addClass('fixed')
+            }else{
+                $('#title').removeClass('fixed')
+            }
+        })
     })
 }])
 
@@ -35,7 +47,7 @@ m.controller('Left', ['$scope', function ($scope) {
             newst = setInterval(scro, 3500);
         })
         function scro() {
-            scrnews.animate({ 'left': '-518px' }, 1500, function () {
+            scrnews.animate({ 'left': '-520px' }, 500, function () {
                 $(this).children("li:first").appendTo(this);
                 $(this).css("left", '0');
             });
@@ -45,11 +57,13 @@ m.controller('Left', ['$scope', function ($scope) {
         }, function () {
             newst = setInterval(scro, 3500);
         })
-        $('#carouse-prev').click(function () {
-            scrnews.children("li:first").appendTo(scrnews);
-        })
         $('#carouse-next').click(function () {
-            scrnews.children("li:last").prependTo(scrnews);
+            scrnews.children("li:last").appendTo(scrnews);
+            scrnews.css('left','-520px')
+            scrnews.animate({'left':0},500)
+        })
+        $('#carouse-prev').click(function () {
+            scro()
         })
     })
 }])

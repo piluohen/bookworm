@@ -15,5 +15,40 @@
         {"img":"../image/sign/sign13.jpg","name":"新评新注--宋词三百首","price":"15.0","shou":"7.1"},
         {"img":"../image/sign/sign14.jpg","name":"罕为人知的中日结盟及其他:晚清中日关系史新探","price":"30.0","shou":"10.2"},
         {"img":"../image/sign/sign15.jpg","name":"捕捉儿童敏感期","price":"28.0","shou":"8.0"}
+    ],
+    "bookracks":[
+        {"content":"我的收藏夹"},
+        {"content":"写书评"},
+        {"content":"我的书评"}
+    ],
+    "indents":[
+        {"content":"订单跟踪"},
+        {"content":"公益订单"},
+        {"content":"收货地址薄"},
+        {"content":"退换货管理"},
+        {"content":"我的竞拍"}
+    ],
+    "users":[
+        {"content":"账户余额"},
+        {"content":"账户安全"},
+        {"content":"书馨卡"},
+        {"content":"我的优惠券"},
+        {"content":"我的邀请"},
+        {"content":"我的抽奖"},
+        {"content":"退款申请"},
+        {"content":"退款清单"}
+    ],
+    "helps":[
+        {"content":"本站简介"},
+        {"content":"我们的优势"},
+        {"content":"订购的问题"},
+        {"content":"支付问题"},
+        {"content":"配送问题"},
+        {"content":"售后问题"},
+        {"content":"积分问题"},
+        {"content":"关于特价书的常见问题"},
+        {"content":"购物演示"},
+        {"content":"团购服务"},
+        {"content":"批发说明"}
     ]
 }

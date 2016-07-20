@@ -8,7 +8,6 @@ m.controller('RegCtrl', ['$scope', '$http', '$window', function ($scope, $http, 
         if (pass[0] == pass[1]) {
             $('#password-error').text('')
             $http.post('/user/register', $scope.reg).then(function (res) {
-                console.log(res.data.message)
                 if (res.data.code == 'registered') {
                     $('#usernames>i').css('display', 'none')
                     $('<i></i>').addClass('icon-remove-sign').text(' ' + res.data.message).appendTo('#usernames')

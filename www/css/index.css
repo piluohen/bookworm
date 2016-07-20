@@ -25,6 +25,23 @@ header{
     margin: 0px 30px;
     height: 80px;
 }
+#logo>img:hover{
+    animation: yaobai 1s linear infinite;
+}
+@keyframes yaobai{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(30deg);
+    }
+    75%{
+        transform: rotate(-30deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
 #logo>span{
     font-size: 35px;
     font-family: '华文行楷';
@@ -45,14 +62,44 @@ header{
     font-size: 16px;
     color: #fc9400;
 }
-#my>span:hover,
+#my>span>span:hover,
 #classify>p:first-child:hover,
 #classify>p>span:hover,
 a:hover,li:hover,
 #div-title>span:hover,
 #lower1>p:hover,
-footer p>span:hover{
+footer p>span:hover,
+ol>li:hover{
     color: orange;
+}
+#my>span{
+    position: relative;
+}
+.helps:hover ol.helps1,
+.bookracks:hover ol.bookracks1,
+.indents:hover ol.indents1,
+.users:hover ol.users1{
+    display: block;
+}
+ol{
+    display: none;
+    width: 150px;
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    z-index: 123;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ffffee;
+    border: 1px solid #ffcc66;
+    box-shadow: 2px 2px 4px #ffcc66;
+    text-align: center;
+}
+ol>li{
+    height: 25px;
+    line-height: 25px;
+    font-size: 13px;
+    list-style: none;
 }
 nav>div{
     display: inline-block;
@@ -66,9 +113,20 @@ nav>div>span{
     font-size: 18px;
     background-image: linear-gradient(to bottom, #ffddcc,#ffddaa);
 }
+nav>div>span:hover{
+    opacity: 0.8;
+    background-image: linear-gradient(to bottom,#ffc633,#fabf1d,#ffb400);
+}
+.checked:hover{
+    opacity: 1;
+    background-image: linear-gradient(to bottom,#ffc633,#fabf1d,#ffb400);
+}
 .checked, nav>div:last-child>span{
     background-image: linear-gradient(to bottom,#ffc633,#fabf1d,#ffb400);
     color: white;
+}
+nav>div:last-child>span:hover{
+    background-image: linear-gradient(to bottom,#ffb400,#fc9400,#fa7202);
 }
 nav>div:first-child{
     padding-top: 30px;
@@ -119,6 +177,13 @@ nav>div:last-child>span{
     position: relative;
     top: -6px;
     right: 13px;
+}
+.fixed{
+    position: fixed;
+    top: 0;
+    z-index: 123;
+    width: 1000px;
+    margin: 0 auto;
 }
 #outer{
     height: 300px;
@@ -252,13 +317,12 @@ main li{
 }
 #carouse{
     height: 200px;
-    width: 1569px;
+    width: 1560px;
     padding: 0;
     position: absolute;
 }
 #carouse>li{
-    width: 523px;
-    margin: 0 -1px;
+    width: 520px;
     float: left;
 }
 #carouse>li>img{
@@ -356,6 +420,7 @@ p>span{
     width: 60px;
     text-align: center;
     padding: 5px;
+    border: 1px solid #ffffee;
     border-bottom: 1px solid #ffcc66;
     cursor: pointer;
 }
@@ -429,6 +494,7 @@ i.icon-caret-right{
 }
 #main-middle>#div-title>a.clicked{
     color: white;
+    box-shadow: 0 1px 2px #ffcc66;
     background-image: linear-gradient(to bottom,#ffb400,#fc9400,#fa7202);
 }
 #main-middle>#div-title>span{
@@ -477,6 +543,11 @@ i.icon-caret-right{
     background-image: linear-gradient(to bottom,#ffb400,#fc9400,#fa7202);
     color: white;
     border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+#price>span:last-child:hover{
+    opacity: 1;
 }
 #zhe>span,#classify>p>span{
     color: #666;

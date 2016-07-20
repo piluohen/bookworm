@@ -31,6 +31,23 @@ header{
     top: -40px;
     right: 25px;
 }
+#logo>img:hover{
+    animation: yaobai 1s linear infinite;
+}
+@keyframes yaobai{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(30deg);
+    }
+    75%{
+        transform: rotate(-30deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
 #my,footer>p{
     width: 750px;
     display: flex;
@@ -40,6 +57,36 @@ header{
 }
 #my{
     width: 700px;
+    float: right;
+}
+#my>span{
+    position: relative;
+}
+.helps:hover ol.helps1,
+.bookracks:hover ol.bookracks1,
+.indents:hover ol.indents1,
+.users:hover ol.users1{
+    display: block;
+}
+ol{
+    display: none;
+    width: 150px;
+    position: absolute;
+    top: 20px;
+    right: -10px;
+    z-index: 123;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ffffee;
+    border: 1px solid #ffcc66;
+    box-shadow: 2px 2px 4px #ffcc66;
+    text-align: center;
+}
+ol>li{
+    height: 25px;
+    line-height: 25px;
+    font-size: 13px;
+    list-style: none;
 }
 #my>i{
     font-style: normal;
@@ -50,8 +97,10 @@ header{
 #my>span:nth-of-type(2){
     color: dodgerblue;
 }
-#my>span:hover,
-footer>p>span:hover{
+#my>span>span:hover,
+footer>p>span:hover,
+ol>li:hover,
+.shopbar:hover{
     color: orange;
 }
 footer{
