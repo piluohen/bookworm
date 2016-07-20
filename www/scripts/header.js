@@ -40,7 +40,7 @@ angular.module('myApp').controller('Header', ['$scope', '$window', '$http',
                 $('#my>span.register').text('免费注册').click(function () {
                     $window.location.href = 'register.html'
                 })
-                $('#my>span.shopbar>span,#my>span.bookracks>span,#my>span.indents>span,#my>span.users>span').click(function () {
+                $('#my>span.shopbar,#my>span.bookracks,#my>span.indents,#my>span.users').click(function () {
                     $window.location.href = 'sign.html'
                 })
             }

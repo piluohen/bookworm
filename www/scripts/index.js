@@ -47,7 +47,7 @@ m.controller('Left', ['$scope', function ($scope) {
             newst = setInterval(scro, 3500);
         })
         function scro() {
-            scrnews.animate({ 'left': '-520px' }, 500, function () {
+            scrnews.animate({ 'left': '-520px' }, 600, function () {
                 $(this).children("li:first").appendTo(this);
                 $(this).css("left", '0');
             });

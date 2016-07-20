@@ -100,7 +100,9 @@ ol>li{
 #my>span>span:hover,
 footer>p>span:hover,
 ol>li:hover,
-.shopbar:hover{
+.shopbar:hover,
+.sign:hover,
+.register:hover{
     color: orange;
 }
 footer{

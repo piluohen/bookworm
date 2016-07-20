@@ -69,7 +69,10 @@ a:hover,li:hover,
 #div-title>span:hover,
 #lower1>p:hover,
 footer p>span:hover,
-ol>li:hover{
+ol>li:hover,
+.shopbar:hover,
+.sign:hover,
+.register:hover{
     color: orange;
 }
 #my>span{
@@ -92,7 +95,7 @@ ol{
     padding: 10px 0;
     background-color: #ffffee;
     border: 1px solid #ffcc66;
-    box-shadow: 2px 2px 4px #ffcc66;
+    box-shadow: 1px 2px 4px #ffcc66;
     text-align: center;
 }
 ol>li{

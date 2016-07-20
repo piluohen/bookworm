@@ -34,10 +34,17 @@ input[type=submit]{
     font-size: 16px;
     color: white;
     cursor: pointer;
+    opacity: 0.8;
     background-image: linear-gradient(to bottom,#ffb400,#fc9400,#fa7202);
+}
+input[type=submit]:hover{
+    opacity: 1;
 }
 form>div{
     margin: 10px 30px;
+}
+form>div:nth-of-type(1){
+    margin: 20px 30px 10px 30px;
 }
 form span{
     cursor: pointer;
@@ -163,11 +170,14 @@ ul>li img:hover{
 }
 #left{
     left: 0;
-    background-image: linear-gradient(to left, #ffffdd,#ffffcc,#ffffaa);
+    background-image: linear-gradient(to left, #ffeecc,#ffddaa,#ffdd99);
 }
 #right{
     right: 0;
-    background-image: linear-gradient(to right, #ffffdd,#ffffcc,#ffffaa);
+    background-image: linear-gradient(to right, #ffeecc,#ffddaa,#ffdd99);
+}
+.orange{
+    color: #ff6600;
 }
 label[for=male],
 label[for=female]{
